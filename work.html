@@ -13,19 +13,9 @@ description: Selected platform, architecture, and organisational work in connect
         cardiac devices. Details are kept high-level; happy to go deeper in conversation.</p>
     </header>
 
-    <div class="work">
-      {%- for item in site.data.work -%}
-      <div class="work__item" style="cursor:default">
-        <span class="work__idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        <span>
-          <span class="work__title">{{ item.title }}</span>
-          <p class="work__desc">{{ item.summary }}</p>
-          <span class="work__tags">
-            {%- for t in item.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
-          </span>
-        </span>
-      </div>
-      {%- endfor -%}
+    <div class="banner--construction">
+      <span class="k">Under construction</span>
+      <p>This section is being rebuilt — selected work will be back here shortly.</p>
     </div>
   </div>
 </section>
