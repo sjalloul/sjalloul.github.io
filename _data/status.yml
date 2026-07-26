@@ -2,4 +2,7 @@
 # Add new entries at the TOP (most recent first) — the homepage callout
 # always shows the first entry, and /status/ lists the full history.
 - date: "2026-07-26"
+  text: "Enjoying summer half-Fridays with the kids, catching up on some writing, and picking up Rust."
+
+- date: "2026-07-26"
   text: "Rebuilding this site and getting back into regular writing — new posts and CV updates incoming."
