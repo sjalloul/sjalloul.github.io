@@ -1,8 +1,11 @@
 <footer class="site-foot">
   <div class="wrap site-foot__inner">
-    <div>
-      <div class="site-foot__name">{{ site.author.name }}</div>
-      <div class="site-foot__fine">{{ site.description }}</div>
+    <div class="site-foot__brand">
+      <img class="site-foot__mark" src="{{ '/assets/img/logo-mark.png' | relative_url }}" alt="{{ site.author.name }} calligraphy mark">
+      <div>
+        <div class="site-foot__name">{{ site.author.name }}</div>
+        <div class="site-foot__fine">{{ site.description }}</div>
+      </div>
     </div>
     <nav class="site-foot__links" aria-label="Elsewhere">
       {%- if site.author.github -%}<a href="https://github.com/{{ site.author.github }}" rel="me">GitHub ↗</a>{%- endif -%}
