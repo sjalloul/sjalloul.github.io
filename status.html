@@ -1,0 +1,26 @@
+---
+layout: default
+title: Status
+permalink: /status/
+description: Short, dated notes on what I'm currently focused on — updated periodically and kept here as a running archive.
+---
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <header class="section__head">
+      {%- assign status_count = site.data.status | size -%}
+      <span class="eyebrow">Status · {{ status_count }} update{% unless status_count == 1 %}s{% endunless %}</span>
+      <h1 class="section__title">Status</h1>
+      <p>Short, dated notes on what I'm currently focused on. Updated periodically; kept here as a
+        running archive rather than overwritten.</p>
+    </header>
+
+    {%- for s in site.data.status -%}
+    <div class="cv-block">
+      <div class="cv-when">{{ s.date | date: "%b %-d, %Y" }}</div>
+      <div>
+        <p class="status-list__text">{{ s.text }}</p>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>

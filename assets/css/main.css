@@ -177,7 +177,8 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .nav-toggle { display: none; }
 
 @media (max-width: 640px) {
-  .nav { gap: 1.1rem; }
+  .site-head__inner { flex-wrap: wrap; row-gap: .5rem; }
+  .nav { gap: .8rem .9rem; flex-wrap: wrap; }
   .nav a span.long { display: none; }
 }
 
@@ -192,7 +193,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
-.hero__photo { justify-self: end; }
+.hero__photo { justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .hero__photo img {
   width: clamp(140px, 20vw, 200px);
   height: clamp(140px, 20vw, 200px);
@@ -204,9 +205,52 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 }
 @media (max-width: 640px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__photo { justify-self: start; order: -1; }
+  .hero__photo { justify-self: start; align-items: flex-start; order: -1; }
   .hero__photo img { width: 96px; height: 96px; }
 }
+
+.status-bubble {
+  max-width: 220px;
+  text-align: center;
+  padding: .9rem 1.1rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper-2);
+}
+.status-bubble__label {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--f-label);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+.status-bubble__label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.status-bubble__text { margin: .55rem 0 .65rem; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.45; }
+.status-bubble__link {
+  font-family: var(--f-label);
+  font-size: .72rem;
+  letter-spacing: .03em;
+  color: var(--accent-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+}
+.status-bubble__link:hover { color: var(--accent); }
+@media (max-width: 640px) {
+  .status-bubble { max-width: none; text-align: left; }
+}
+
+.status-list__text { color: var(--ink-soft); margin: 0; max-width: 60ch; }
 
 .hero__lede {
   font-size: var(--step-4);
