@@ -193,30 +193,39 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
-.hero__photo { justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.hero__photo img {
-  width: clamp(140px, 20vw, 200px);
-  height: clamp(140px, 20vw, 200px);
+.hero__photo { justify-self: end; }
+@media (max-width: 640px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__photo { justify-self: start; order: -1; }
+}
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 220px;
+  text-align: center;
+  padding: 1.4rem 1.1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper-2);
+}
+.status-card__photo {
+  width: clamp(110px, 16vw, 150px);
+  height: clamp(110px, 16vw, 150px);
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--paper);
   outline: 1px solid var(--line);
   box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px -8px rgba(0,0,0,.18);
+  margin-bottom: 1rem;
 }
 @media (max-width: 640px) {
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__photo { justify-self: start; align-items: flex-start; order: -1; }
-  .hero__photo img { width: 96px; height: 96px; }
+  .status-card { max-width: none; flex-direction: row; align-items: center; text-align: left; gap: 1rem; }
+  .status-card__photo { width: 72px; height: 72px; margin-bottom: 0; flex: none; }
+  .status-card__body { flex: 1; }
 }
 
-.status-bubble {
-  max-width: 220px;
-  text-align: center;
-  padding: .9rem 1.1rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--paper-2);
-}
 .status-bubble__label {
   display: inline-flex;
   align-items: center;
