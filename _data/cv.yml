@@ -1,34 +1,89 @@
-# PLACEHOLDER CONTENT — replace dates, orgs and bullets with your real history.
+# Sourced from LinkedIn (sjalloul). Update here when your history changes.
 roles:
-  - when: "2019 — Present"
-    role: "Software Lead / Product Owner, Connected Platforms"
-    org: "Medical Device Company"
+  - when: "May 2026 — Present"
+    role: "Manager, Software Engineering — Applied Science & AI"
+    org: "Johnson & Johnson MedTech (Abiomed)"
     points:
-      - "Own the software architecture and roadmap for a remote-monitoring connectivity platform serving cardiac assist devices."
-      - "Designed and shipped an A/B over-the-air update system (OSTree, U-Boot, staged service packs, automatic rollback)."
-      - "Lead a mix of principal engineers and an offshore delivery team; run the agile cadence, demos, and architecture review."
-      - "Own IEC 62304 lifecycle documentation, ISO 14971 risk work, and FDA cybersecurity alignment for Class II software."
+      - "Lead the Applied Science & AI software engineering team building connected platforms for Abiomed's cardiac assist devices."
+      - "Own technical direction and delivery for the team, continuing work on OTA updates, remote-monitoring connectivity, and regulated software lifecycle (IEC 62304)."
+      - "Promoted into engineering leadership after three years driving the same mission as Principal TPM."
 
-  - when: "2014 — 2019"
-    role: "Senior Software Engineer → Engineering Lead"
-    org: "Medical Device Company"
+  - when: "Jan 2023 — May 2026 · 3 yrs 5 mos"
+    role: "Principal Technical Program Manager — Applied Science & AI"
+    org: "Johnson & Johnson MedTech (Abiomed)"
     points:
-      - "Moved from feature development into architecture and technical leadership on embedded Linux platforms."
-      - "Introduced diagrams-as-code and design-doc standards adopted across the engineering organisation."
-      - "Built the structured hiring loop still used to bring on SDET and QA engineers."
+      - "Drove technical program management for software and device platforms advancing Abiomed's cardiac care mission."
+      - "Coordinated cross-functional delivery across engineering, data science, and regulatory stakeholders on a connected cardiac-assist device platform."
+      - "Owned architecture and roadmap threads spanning OTA updates, remote monitoring connectivity, and IEC 62304 / FDA cybersecurity alignment."
 
-  - when: "2007 — 2014"
-    role: "Software Engineer"
-    org: "Enterprise Software (Java / .NET)"
+  - when: "Nov 2021 — Dec 2022 · 1 yr 2 mos"
+    role: "Senior Technical Project Manager (Software)"
+    org: "HighRes Biosolutions"
     points:
-      - "Delivered application and services work across the Java and .NET stacks."
-      - "The grounding in enterprise systems that later transferred into safety-critical software."
+      - "Delivered custom software and lab-automation solutions for pharma and biotech customers, including Novo Nordisk, Pfizer, Amgen, Merck, BMS, and Beam Therapeutics."
+      - "Ran Agile delivery across concurrent customer engagements in a fast-moving automation/robotics product line."
+
+  - when: "Mar 2018 — Oct 2021 · 3 yrs 8 mos"
+    role: "Software Quality Engineering Lead"
+    org: "Amundi US"
+    points:
+      - "Set testing strategy and led automation, performance, and reliability testing, balancing hands-on QA work with technical direction and mentoring."
+      - "Built and supported automated testing frameworks for high-profile platforms using open-source tooling."
+      - "Led onshore and offshore automation engineers; defined and reported quality metrics inside the Agile/Scrum cadence."
+
+  - when: "Nov 2014 — Mar 2018 · 3 yrs 5 mos"
+    role: "QA Team Lead"
+    org: "Amundi US"
+    points:
+      - "Built automation frameworks spanning integration, web-service, mobile, and GUI testing across product lines."
+      - "Mentored a team of functional testers and automation engineers, working directly with developers and product managers to catch defects early."
+
+  - when: "May 2010 — Dec 2014 · 4 yrs 8 mos"
+    role: "QA Automation Engineer"
+    org: "Plymouth Rock Assurance"
+    points:
+      - "Architected a data-driven testing framework for on-the-fly test case authoring and execution."
+      - "Built tooling to parse XML test data and streamline testing across eService, eSales 2.0, and Agency Interface 2.0."
+
+  - when: "Apr 2010 — Sep 2010 · 6 mos"
+    role: "Research/Engineering Intern"
+    org: "Recorded Future"
+    points:
+      - "Worked on study design, data analysis, and algorithm prototyping, including supervised, reinforcement, and transduction learning approaches."
+      - "Modeled in MATLAB, C/C++, and R across distributed, data-intensive batch processing."
+
+  - when: "Jul 2009 — Feb 2010 · 8 mos"
+    role: "Quality Assurance Engineer (Contractor)"
+    org: "John Hancock Life Insurance (Manulife)"
+    points:
+      - "Supported the Subsidiary 2/3 project's Accounting (eTreasury) and Traditional/Non-Traditional product workstreams."
+      - "Aligned business requirements with SDLC quality controls across complex mainframe and UNIX systems."
+
+  - when: "Jan 2009 — Jun 2009 · 6 mos"
+    role: "Release Engineer (Contractor)"
+    org: "John Hancock Life Insurance (Manulife)"
+    points:
+      - "Migrated .NET/NAnt and Java/Maven build repositories from CVS to IBM ClearCase without disrupting development teams."
+      - "Owned release and deployment coordination across QA, UAT, and production environments."
+
+  - when: "Oct 2007 — Dec 2008 · 1 yr 3 mos"
+    role: "Media Optimization & Technology"
+    org: "Publicis Groupe"
+    points:
+      - "Built marketing visualization dashboards (Business Objects, Flex) for Fortune 100 clients including Bank of America, American Express, and General Motors."
+
+  - when: "Jun 2004 — May 2007 · 3 yrs"
+    role: "Systems Engineer (Intern / Full-time)"
+    org: "Procter & Gamble"
+    points:
+      - "Supported 400+ Windows server applications across Gillette/P&G's enterprise IT infrastructure."
+      - "Built disaster-recovery and business-resumption plans for enterprise systems."
 
 skills:
-  Languages: ["Rust", "C / C++", "Java", "C#/.NET", "Python", "Bash"]
-  Systems: ["Embedded Linux", "OSTree", "U-Boot", "Yocto/Torizon", "CAN bus", "OTA"]
-  Practice: ["IEC 62304", "ISO 14971", "FDA cybersecurity", "Agile / Scrum", "Threat modelling"]
-  Craft: ["System architecture", "Mermaid / diagrams-as-code", "Interface control docs", "Mentoring"]
+  Languages: ["Rust", "Python", "Java", "C / C++", "C#/.NET", "R", "Bash"]
+  Systems & Tools: ["Embedded Linux", "OSTree", "U-Boot", "OTA", "Git", "Maven", "IBM ClearCase"]
+  Practice: ["IEC 62304", "FDA cybersecurity", "Agile / Scrum", "Test automation", "Performance & reliability testing"]
+  Craft: ["System architecture", "Technical program leadership", "Mermaid / diagrams-as-code", "Mentoring", "Cross-functional delivery"]
 
 education:
   - when: "—"
