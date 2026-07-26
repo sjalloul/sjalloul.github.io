@@ -80,10 +80,10 @@ roles:
       - "Built disaster-recovery and business-resumption plans for enterprise systems."
 
 skills:
-  Languages: ["Rust", "Python", "Java", "C / C++", "C#/.NET", "R", "Bash"]
-  Systems & Tools: ["Embedded Linux", "OSTree", "U-Boot", "OTA", "Git", "Maven", "IBM ClearCase"]
-  Practice: ["IEC 62304", "FDA cybersecurity", "Agile / Scrum", "Test automation", "Performance & reliability testing"]
-  Craft: ["System architecture", "Technical program leadership", "Mermaid / diagrams-as-code", "Mentoring", "Cross-functional delivery"]
+  Languages: ["Rust", "Python", "Java", "C / C++", "C#/.NET", "R", "MATLAB", "Bash"]
+  Systems & Tools: ["Embedded Linux", "Linux", "OSTree", "U-Boot", "OTA", "Git", "Maven", "Eclipse", "IBM ClearCase", "AWS / AWS Lambda", "NoSQL"]
+  Practice: ["IEC 62304", "FDA cybersecurity", "Cybersecurity", "Agile / Scrum", "Test automation", "Performance & reliability testing"]
+  Craft: ["System architecture", "Machine Learning", "Object-Oriented Programming", "Technical program leadership", "Mermaid / diagrams-as-code", "Mentoring", "Cross-functional delivery"]
 
 education:
   - when: "—"
