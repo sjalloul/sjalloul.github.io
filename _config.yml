@@ -21,12 +21,12 @@ baseurl: ""
 # ---- Who you are (used across the site) ----
 author:
   name: "Samir"
-  role: "Software Lead & Product Owner"
-  company: "Medical Device Software"
+  role: "Manager, Software Engineering — Applied Science & AI"
+  company: "Johnson & Johnson MedTech (Abiomed)"
   location: "Greater Boston, USA"
   email: "you@example.com"
   github: "sjalloul"
-  linkedin: "your-handle"
+  linkedin: "sjalloul"
 
 # ---- Build ----
 markdown: kramdown
