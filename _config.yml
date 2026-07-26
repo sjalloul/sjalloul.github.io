@@ -2,7 +2,7 @@
 #  SITE CONFIG  —  edit the values in this file to make it yours
 # ============================================================
 
-title: "Samir Jalloul"
+title: "Samir JALLOUL"
 description: "Software engineering leader building safety-critical, connected medical systems — and the teams that ship them."
 lang: en
 
@@ -20,7 +20,7 @@ baseurl: ""
 
 # ---- Who you are (used across the site) ----
 author:
-  name: "Samir Jalloul"
+  name: "Samir JALLOUL"
   role: "Manager, Software Engineering — Applied Science & AI"
   company: "Johnson & Johnson MedTech (Abiomed)"
   location: "Greater Boston, USA"
