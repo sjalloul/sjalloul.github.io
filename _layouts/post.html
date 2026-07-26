@@ -10,6 +10,7 @@ layout: default
       {{ page.date | date: "%B %-d, %Y" }}
       {%- if page.reading_time %} · {{ page.reading_time }} min read{%- else %} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read{%- endif -%}
     </div>
+    <p class="site-foot__fine">Thoughts and notes here are my own personal opinions, not my employer's.</p>
   </header>
 
   <div class="wrap">
