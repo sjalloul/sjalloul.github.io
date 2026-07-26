@@ -6,23 +6,29 @@ description: Software engineering leader building safety-critical, connected med
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Engineering leadership · Regulated software</span>
-    <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
-    <p class="hero__sub">
-      {{ site.author.name }} — {{ site.author.role }}. Two decades from application code to
-      safety-critical embedded systems, now leading the platforms that keep cardiac patients
-      monitored and clinicians connected.
-    </p>
+  <div class="wrap hero__grid">
+    <div class="hero__content">
+      <span class="eyebrow">Engineering leadership · Regulated software</span>
+      <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
+      <p class="hero__sub">
+        {{ site.author.name }} — {{ site.author.role }}. Two decades from application code to
+        safety-critical embedded systems, now leading the platforms that keep cardiac patients
+        monitored and clinicians connected.
+      </p>
 
-    <div class="hero__meta">
-      <span><b>Now</b> {{ site.author.company }}</span>
-      <span><b>Focus</b> Embedded Linux · OTA · IEC 62304</span>
-      <span><b>Also</b> Hiring, mentoring, diagrams-as-code</span>
-      <span><b>Based</b> {{ site.author.location }}</span>
+      <div class="hero__meta">
+        <span><b>Now</b> {{ site.author.company }}</span>
+        <span><b>Focus</b> Embedded Linux · OTA · IEC 62304</span>
+        <span><b>Also</b> Hiring, mentoring, diagrams-as-code</span>
+        <span><b>Based</b> {{ site.author.location }}</span>
+      </div>
+
+      {% include pulse.html %}
     </div>
 
-    {% include pulse.html %}
+    <div class="hero__photo">
+      <img src="{{ '/assets/img/samir-headshot.jpg' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="480" height="480">
+    </div>
   </div>
 </section>
 
