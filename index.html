@@ -1,0 +1,122 @@
+---
+layout: default
+title: Home
+description: Software engineering leader building safety-critical, connected medical systems — and the teams that ship them.
+---
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Engineering leadership · Regulated software</span>
+    <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
+    <p class="hero__sub">
+      {{ site.author.name }} — {{ site.author.role }}. Two decades from application code to
+      safety-critical embedded systems, now leading the platforms that keep cardiac patients
+      monitored and clinicians connected.
+    </p>
+
+    <div class="hero__meta">
+      <span><b>Now</b> {{ site.author.company }}</span>
+      <span><b>Focus</b> Embedded Linux · OTA · IEC 62304</span>
+      <span><b>Also</b> Hiring, mentoring, diagrams-as-code</span>
+      <span><b>Based</b> {{ site.author.location }}</span>
+    </div>
+
+    {% include pulse.html %}
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Selected work</span>
+      <h2 class="section__title">Things I've helped ship</h2>
+      <p>A sample of platform, architecture, and organisational work — the connective tissue behind
+        remote-monitored cardiac devices.</p>
+    </header>
+
+    <div class="work">
+      {%- for item in site.data.work limit: 4 -%}
+      <a class="work__item" href="{{ item.link | default: '/work/' | relative_url }}">
+        <span class="work__idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <span>
+          <span class="work__title">{{ item.title }}</span>
+          <p class="work__desc">{{ item.summary }}</p>
+          <span class="work__tags">
+            {%- for t in item.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
+          </span>
+        </span>
+        <span class="work__arrow" aria-hidden="true">→</span>
+      </a>
+      {%- endfor -%}
+    </div>
+
+    <a class="more-link" href="{{ '/work/' | relative_url }}">See all work</a>
+  </div>
+</section>
+
+<!-- ============ WRITING ============ -->
+<section class="section" id="writing">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Writing</span>
+      <h2 class="section__title">Notes on software, leadership & the craft</h2>
+      <p>Essays on software engineering, thought leadership, and the long work of building a
+        software organisation that lasts.</p>
+    </header>
+
+    <div class="posts">
+      {%- for post in site.posts limit: 4 -%}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <div class="post-row__meta">
+          {{ post.date | date: "%b %-d, %Y" }}
+          <span class="post-row__cat">{{ post.category | default: "Essay" }}</span>
+        </div>
+        <div>
+          <h3 class="post-row__title">{{ post.title }}</h3>
+          <p class="post-row__excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 160 }}</p>
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+
+    <a class="more-link" href="{{ '/writing/' | relative_url }}">Read the archive</a>
+  </div>
+</section>
+
+<!-- ============ INTERESTS ============ -->
+<section class="section" id="interests">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Off the clock</span>
+      <h2 class="section__title">What I'm into</h2>
+    </header>
+
+    <div class="interests">
+      {%- for it in site.data.interests -%}
+      <div class="interest">
+        <span class="k">{{ it.kind }}</span>
+        <h3>{{ it.title }}</h3>
+        <p>{{ it.note }}</p>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- ============ CV CTA ============ -->
+<section class="section" id="cv-cta">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Curriculum vitae</span>
+      <h2 class="section__title">The long version</h2>
+      <p>Roles, the systems behind them, and the throughline from application developer to
+        engineering leader in regulated medical devices.</p>
+    </header>
+    <div class="btn-row">
+      <a class="btn btn--accent" href="{{ '/cv/' | relative_url }}">Read the CV →</a>
+      {% if site.author.github %}<a class="btn" href="https://github.com/{{ site.author.github }}">GitHub ↗</a>{% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+layout: default
+title: Interests
+permalink: /interests/
+description: Off the clock — music, motorsport, football history, language, and making things.
+---
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Off the clock</span>
+      <h1 class="section__title">Interests</h1>
+      <p>The things that fill the edges of the week — and quietly inform how I think about
+        rhythm, systems, and craft.</p>
+    </header>
+
+    <div class="interests">
+      {%- for it in site.data.interests -%}
+      <div class="interest">
+        <span class="k">{{ it.kind }}</span>
+        <h3>{{ it.title }}</h3>
+        <p>{{ it.note }}</p>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

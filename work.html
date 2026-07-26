@@ -1,0 +1,31 @@
+---
+layout: default
+title: Work
+permalink: /work/
+description: Selected platform, architecture, and organisational work in connected medical software.
+---
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Selected work</span>
+      <h1 class="section__title">Work</h1>
+      <p>Platform, architecture, and the organisational scaffolding behind remote-monitored
+        cardiac devices. Details are kept high-level; happy to go deeper in conversation.</p>
+    </header>
+
+    <div class="work">
+      {%- for item in site.data.work -%}
+      <div class="work__item" style="cursor:default">
+        <span class="work__idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <span>
+          <span class="work__title">{{ item.title }}</span>
+          <p class="work__desc">{{ item.summary }}</p>
+          <span class="work__tags">
+            {%- for t in item.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
+          </span>
+        </span>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

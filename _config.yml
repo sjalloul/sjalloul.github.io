@@ -1,0 +1,54 @@
+# ============================================================
+#  SITE CONFIG  —  edit the values in this file to make it yours
+# ============================================================
+
+title: "Samir"
+description: "Software engineering leader building safety-critical, connected medical systems — and the teams that ship them."
+lang: en
+
+# ---- IMPORTANT: URL settings for GitHub Pages ----
+# If your repo is named  <username>.github.io  (a "user site"):
+#     url: "https://<username>.github.io"
+#     baseurl: ""
+#
+# If your repo is a normal project repo (e.g. "portfolio"),
+# your site lives at <username>.github.io/portfolio, so set:
+#     url: "https://<username>.github.io"
+#     baseurl: "/portfolio"
+url: "https://sjalloul.github.io"
+baseurl: ""
+
+# ---- Who you are (used across the site) ----
+author:
+  name: "Samir"
+  role: "Software Lead & Product Owner"
+  company: "Medical Device Software"
+  location: "Greater Boston, USA"
+  email: "you@example.com"
+  github: "sjalloul"
+  linkedin: "your-handle"
+
+# ---- Build ----
+markdown: kramdown
+permalink: /writing/:title/
+timezone: America/New_York
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# jekyll-feed: put the RSS at /feed.xml
+feed:
+  path: feed.xml
+
+# Show newest posts first; enable excerpts
+show_excerpts: true
+
+# Don't build these into the site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - preview.html
+  - vendor
+  - .sass-cache

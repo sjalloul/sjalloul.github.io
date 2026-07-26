@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samir — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =============================================================
+   Design system
+   Palette : kraft-oat · espresso ink · warm taupe · hairline
+             · brick-rust (the "pulse") + olive companion
+   Type    : Bricolage Grotesque (display) · Hanken Grotesk (body)
+             · IBM Plex Mono (utility / spec labels)
+   Signature: an ECG / oscilloscope pulse trace — a nod to the
+             cardiac-monitoring world this work comes from.
+   ============================================================= */
+
+:root {
+  --paper:      #ECE3D2;   /* warm kraft-oat */
+  --paper-2:    #E0D3BB;   /* deeper sand for panels */
+  --ink:        #221F19;   /* warm espresso near-black */
+  --ink-soft:   #47412F;   /* warm brown-grey body */
+  --muted:      #6F6552;   /* warm taupe */
+  --line:       #D7CAB0;   /* warm hairline */
+  --line-2:     #C7B795;
+  --accent:     #A8432B;   /* brick-rust — the pulse */
+  --accent-2:   #5D6438;   /* olive companion */
+  --accent-ink: #7A2A17;   /* deep clay for hover */
+
+  --maxw: 74rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:    "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1.02rem, 0.98rem + 0.2vw, 1.14rem);
+  --step-1:  clamp(1.24rem, 1.15rem + 0.45vw, 1.5rem);
+  --step-2:  clamp(1.55rem, 1.35rem + 1vw, 2.15rem);
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.4rem);
+  --step-4:  clamp(2.9rem, 2.1rem + 4vw, 5.6rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--step-0);
+  line-height: 1.62;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* subtle drafting-grid tint on the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 100% 100%, clamp(3rem, 8vw, 6rem) 100%;
+  opacity: .35;
+  mask-image: linear-gradient(180deg, transparent, #000 12rem, #000);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+::selection { background: var(--accent); color: var(--paper); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- utility / spec labels ---------- */
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--step--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 0 0 1.2rem;
+}
+.eyebrow::before {
+  content: "";
+  width: .62rem; height: .62rem;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.mono { font-family: var(--f-mono); }
+
+/* ---------- headings ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 .6em;
+}
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); letter-spacing: -0.01em; }
+
+p { margin: 0 0 1.15em; }
+p a, .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); }
+p a:hover, .prose a:hover { color: var(--accent-ink); }
+
+/* =============================================================
+   Header / nav
+   ============================================================= */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-head__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.2rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  text-decoration: none;
+  font-family: var(--f-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 1.06rem;
+}
+.brand__mark { width: 34px; height: 20px; color: var(--accent); }
+.brand__mark path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+.nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.2rem); }
+.nav a {
+  font-family: var(--f-mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: .35rem 0;
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+}
+.nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
+.nav a[aria-current="page"] { color: var(--ink); }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 640px) {
+  .nav { gap: 1.1rem; }
+  .nav a span.long { display: none; }
+}
+
+/* =============================================================
+   Hero
+   ============================================================= */
+.hero { padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem); }
+.hero__lede {
+  font-size: var(--step-4);
+  font-family: var(--f-display);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: .3rem 0 1.4rem;
+  max-width: 20ch;
+}
+.hero__lede em { font-style: normal; color: var(--accent); }
+.hero__sub {
+  font-size: var(--step-1);
+  max-width: 46ch;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.4rem;
+  font-family: var(--f-mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+.hero__meta b { color: var(--ink); font-weight: 500; }
+
+/* pulse trace signature */
+.pulse { width: 100%; height: clamp(70px, 14vw, 130px); margin: 2.6rem 0 0; color: var(--accent); overflow: visible; }
+.pulse path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pulse .base { stroke: var(--line-2); stroke-width: 1; }
+.pulse .trace {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: draw 2.6s cubic-bezier(.65,0,.35,1) .2s forwards;
+}
+.pulse .blip { fill: var(--accent); opacity: 0; animation: blip 2.6s linear .2s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes blip { 0%,88%{opacity:0} 92%{opacity:1} 100%{opacity:1} }
+@media (prefers-reduced-motion: reduce) {
+  .pulse .trace { animation: none; stroke-dashoffset: 0; }
+  .pulse .blip { animation: none; opacity: 1; }
+}
+
+/* =============================================================
+   Section scaffold
+   ============================================================= */
+.section { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--line); }
+.section__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .4rem;
+  margin-bottom: 2.4rem;
+}
+.section__head p { color: var(--muted); max-width: 52ch; margin: .3rem 0 0; }
+.section__title { font-size: var(--step-3); }
+
+/* =============================================================
+   Work list
+   ============================================================= */
+.work { display: grid; gap: 0; }
+.work__item {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left .25s ease, background .25s ease;
+}
+.work__item:last-child { border-bottom: 1px solid var(--line); }
+.work__item:hover { padding-left: .8rem; background: linear-gradient(90deg, var(--paper-2), transparent 40%); }
+.work__idx { font-family: var(--f-mono); font-size: var(--step--1); color: var(--accent); padding-top: .35rem; }
+.work__title { font-family: var(--f-display); font-weight: 600; font-size: var(--step-1); letter-spacing: -0.01em; margin: 0 0 .35rem; }
+.work__desc { color: var(--ink-soft); margin: 0 0 .7rem; max-width: 60ch; font-size: var(--step-0); }
+.work__tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag {
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: .18rem .6rem;
+}
+.work__arrow { font-family: var(--f-mono); color: var(--muted); align-self: center; transition: transform .25s ease, color .25s ease; }
+.work__item:hover .work__arrow { transform: translateX(4px); color: var(--accent); }
+
+@media (max-width: 640px) {
+  .work__item { grid-template-columns: 2.4rem 1fr; }
+  .work__arrow { display: none; }
+}
+
+/* =============================================================
+   Writing / posts
+   ============================================================= */
+.posts { display: grid; gap: 0; }
+.post-row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.6rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+.post-row:last-child { border-bottom: 1px solid var(--line); }
+.post-row__meta { font-family: var(--f-mono); font-size: var(--step--1); color: var(--muted); padding-top: .2rem; }
+.post-row__cat { color: var(--accent-2); display: block; margin-top: .3rem; }
+.post-row__title { font-family: var(--f-display); font-weight: 600; font-size: var(--step-1); letter-spacing: -0.01em; margin: 0 0 .4rem; transition: color .2s; }
+.post-row:hover .post-row__title { color: var(--accent-ink); }
+.post-row__excerpt { color: var(--ink-soft); margin: 0; max-width: 62ch; }
+@media (max-width: 640px) {
+  .post-row { grid-template-columns: 1fr; gap: .5rem; }
+}
+
+/* =============================================================
+   Interests strip
+   ============================================================= */
+.interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem; }
+.interest {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.4rem;
+  background: color-mix(in srgb, var(--paper) 60%, #fff);
+}
+.interest h3 { font-size: var(--step-0); margin-bottom: .3rem; }
+.interest p { color: var(--muted); font-size: var(--step--1); margin: 0; line-height: 1.5; }
+.interest .k { font-family: var(--f-mono); font-size: .72rem; color: var(--accent-2); text-transform: uppercase; letter-spacing: .1em; display:block; margin-bottom:.7rem; }
+
+/* =============================================================
+   CV
+   ============================================================= */
+.cv-block { display: grid; grid-template-columns: 12rem 1fr; gap: 1.5rem 2.5rem; padding: 1.8rem 0; border-top: 1px solid var(--line); }
+.cv-block:first-of-type { border-top: 0; }
+.cv-when { font-family: var(--f-mono); font-size: var(--step--1); color: var(--muted); }
+.cv-role { font-family: var(--f-display); font-weight: 600; font-size: var(--step-1); margin: 0 0 .1rem; }
+.cv-org { color: var(--accent-ink); font-style: italic; margin: 0 0 .8rem; }
+.cv-points { margin: 0; padding: 0; list-style: none; }
+.cv-points li { position: relative; padding-left: 1.2rem; margin-bottom: .5rem; color: var(--ink-soft); }
+.cv-points li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+.skills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; }
+@media (max-width: 640px) { .cv-block { grid-template-columns: 1fr; gap: .5rem; } }
+
+/* =============================================================
+   Prose (post body & pages)
+   ============================================================= */
+.prose { max-width: 42rem; margin-inline: auto; }
+.prose h2 { font-size: var(--step-2); margin-top: 2.4rem; }
+.prose h3 { font-size: var(--step-1); margin-top: 1.8rem; }
+.prose p, .prose li { font-size: 1.1rem; line-height: 1.7; }
+.prose ul, .prose ol { padding-left: 1.3rem; margin-bottom: 1.2em; }
+.prose li { margin-bottom: .5rem; }
+.prose blockquote {
+  margin: 1.6rem 0;
+  padding: .3rem 0 .3rem 1.4rem;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.prose code {
+  font-family: var(--f-mono);
+  font-size: .88em;
+  background: var(--paper-2);
+  padding: .12em .4em;
+  border-radius: 4px;
+}
+.prose pre {
+  font-family: var(--f-mono);
+  background: var(--ink);
+  color: #E7E9E4;
+  padding: 1.2rem 1.4rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; color: inherit; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.4rem 0; }
+.prose img { border-radius: 8px; margin: 1.6rem 0; }
+
+/* post header */
+.post-head { max-width: 42rem; margin: clamp(2.5rem,6vw,4.5rem) auto 2rem; }
+.post-head .eyebrow { margin-bottom: 1rem; }
+.post-head h1 { font-size: var(--step-3); }
+.post-head__meta { font-family: var(--f-mono); font-size: var(--step--1); color: var(--muted); margin-top: 1rem; }
+
+/* =============================================================
+   Buttons / links
+   ============================================================= */
+.btn-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.btn {
+  font-family: var(--f-mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .7rem 1.2rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  transition: background .2s, color .2s, transform .2s;
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+.btn--accent { border-color: var(--accent); color: var(--accent-ink); }
+.btn--accent:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+.more-link {
+  font-family: var(--f-mono);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+  display: inline-block;
+  margin-top: 2rem;
+}
+.more-link:hover { color: var(--accent-ink); }
+
+/* =============================================================
+   Footer
+   ============================================================= */
+.site-foot { border-top: 1px solid var(--line); margin-top: 2rem; padding: 3rem 0; }
+.site-foot__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end; }
+.site-foot__name { font-family: var(--f-display); font-weight: 700; font-size: var(--step-1); }
+.site-foot__links { display: flex; flex-wrap: wrap; gap: 1.4rem; font-family: var(--f-mono); font-size: var(--step--1); }
+.site-foot__links a { color: var(--ink-soft); text-decoration: none; }
+.site-foot__links a:hover { color: var(--accent); }
+.site-foot__fine { font-family: var(--f-mono); font-size: .74rem; color: var(--muted); margin-top: 1.5rem; }
+
+/* accessible focus */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* skip link */
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: .6rem 1rem; z-index: 100; font-family: var(--f-mono); font-size: var(--step--1); }
+.skip:focus { left: .5rem; top: .5rem; }
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="#" aria-label="Samir — home">
+      <svg class="brand__mark" viewBox="0 0 34 20" aria-hidden="true">
+        <path d="M1 10 H9 L11 4 L14 16 L17 7 L19 13 L21 10 H33"/>
+      </svg>
+      <span>Samir</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#cv-cta">CV</a>
+      <a href="#interests">Interests</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Engineering leadership · Regulated software</span>
+    <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
+    <p class="hero__sub">Samir — Software Lead &amp; Product Owner. Two decades from application code to safety-critical embedded systems, now leading the platforms that keep cardiac patients monitored and clinicians connected.</p>
+    <div class="hero__meta">
+      <span><b>Now</b> Medical Device Software</span>
+      <span><b>Focus</b> Embedded Linux · OTA · IEC 62304</span>
+      <span><b>Also</b> Hiring, mentoring, diagrams-as-code</span>
+      <span><b>Based</b> Greater Boston, USA</span>
+    </div>
+    <svg class="pulse" viewBox="0 0 1200 120" preserveAspectRatio="none" role="img" aria-label="A stylised heartbeat trace">
+      <line class="base" x1="0" y1="60" x2="1200" y2="60"/>
+      <path class="trace" d="M0,60 H180 L210,60 L235,20 L262,102 L288,44 L312,60 H430 L455,60 L470,38 L488,82 L505,60 H660 L690,60 L716,10 L744,110 L770,52 L796,60 H940 L965,60 L982,42 L1000,80 L1018,60 H1200"/>
+      <circle class="blip" cx="1200" cy="60" r="5"/>
+    </svg>
+  </div>
+</section>
+<section class="section" id="work">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Selected work</span>
+      <h2 class="section__title">Things I've helped ship</h2>
+      <p>A sample of platform, architecture, and organisational work — the connective tissue behind remote-monitored cardiac devices.</p>
+    </header>
+    <div class="work">
+      <a class="work__item" href="#">
+        <span class="work__idx">01</span>
+        <span>
+          <span class="work__title">Over-the-Air Update Platform for Connected Cardiac Devices</span>
+          <p class="work__desc">Designed the A/B slot update architecture — OSTree deployments, U-Boot boot selection, staged service packs and automatic rollback — so field devices can be updated safely without a service visit.</p>
+          <span class="work__tags"><span class="tag">Embedded Linux</span><span class="tag">OSTree</span><span class="tag">U-Boot</span><span class="tag">OTA</span><span class="tag">IEC 62304</span></span>
+        </span>
+        <span class="work__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="work__item" href="#">
+        <span class="work__idx">02</span>
+        <span>
+          <span class="work__title">Remote Monitoring &amp; Connectivity Platform</span>
+          <p class="work__desc">Product ownership and software architecture for the connectivity layer that links cardiac assist devices to remote clinical monitoring — protocol design, interface control documents, and cross-team governance.</p>
+          <span class="work__tags"><span class="tag">System Architecture</span><span class="tag">Product Ownership</span><span class="tag">Connectivity</span></span>
+        </span>
+        <span class="work__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="work__item" href="#">
+        <span class="work__idx">03</span>
+        <span>
+          <span class="work__title">Diagrams-as-Code Adoption</span>
+          <p class="work__desc">Introduced Mermaid and a diagrams-as-code workflow across the engineering organisation, with reference guides and a phased adoption playbook — design docs that live in version control and review like code.</p>
+          <span class="work__tags"><span class="tag">Mermaid</span><span class="tag">Docs</span><span class="tag">Developer Experience</span></span>
+        </span>
+        <span class="work__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="work__item" href="#">
+        <span class="work__idx">04</span>
+        <span>
+          <span class="work__title">Structured Hiring Loops</span>
+          <p class="work__desc">Built interview kits and calibrated question banks for SDET, QA, and engineering roles — turning ad-hoc interviews into a repeatable, fair, signal-rich loop.</p>
+          <span class="work__tags"><span class="tag">Hiring</span><span class="tag">Team Building</span><span class="tag">Process</span></span>
+        </span>
+        <span class="work__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+    <a class="more-link" href="#">See all work</a>
+  </div>
+</section>
+<section class="section" id="writing">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Writing</span>
+      <h2 class="section__title">Notes on software, leadership &amp; the craft</h2>
+      <p>Essays on software engineering, thought leadership, and the long work of building a software organisation that lasts.</p>
+    </header>
+    <div class="posts">
+      <a class="post-row" href="#">
+        <div class="post-row__meta">Jun 18, 2026<span class="post-row__cat">Software Engineering</span></div>
+        <div>
+          <h3 class="post-row__title">Traceability Is a Feature, Not Paperwork</h3>
+          <p class="post-row__excerpt">In regulated software, traceability gets treated as a tax on shipping. Done right, it's the opposite — it's the thing that lets you ship at all.</p>
+        </div>
+      </a>
+      <a class="post-row" href="#">
+        <div class="post-row__meta">May 9, 2026<span class="post-row__cat">Building Teams</span></div>
+        <div>
+          <h3 class="post-row__title">Notes on Building a Software Organization</h3>
+          <p class="post-row__excerpt">A working set of principles for growing an engineering org that ships — hiring, ownership, cadence, and the unglamorous parts that actually compound.</p>
+        </div>
+      </a>
+      <a class="post-row" href="#">
+        <div class="post-row__meta">Apr 2, 2026<span class="post-row__cat">Thought Leadership</span></div>
+        <div>
+          <h3 class="post-row__title">What Regulated Software Taught Me About Speed</h3>
+          <p class="post-row__excerpt">"Move fast and break things" doesn't survive contact with a device that's keeping someone alive. Here's what constraint teaches you about going fast — everywhere.</p>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="#">Read the archive</a>
+  </div>
+</section>
+<section class="section" id="interests">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Off the clock</span>
+      <h2 class="section__title">What I'm into</h2>
+    </header>
+    <div class="interests">
+      <div class="interest"><span class="k">Music</span><h3>French-Arabic house</h3><p>Somewhere between a Marseille basement and a Cairo rooftop. The rhythmic overlap of two traditions is a whole education in structure.</p></div>
+      <div class="interest"><span class="k">Motorsport</span><h3>Racing history</h3><p>The engineering arms race of Formula 1 across the decades — where regulation, ambition, and physics keep re-negotiating the limits.</p></div>
+      <div class="interest"><span class="k">Football</span><h3>World Cup history</h3><p>Tournaments as social history. The tactics change, but the stories about who we are stay remarkably constant.</p></div>
+      <div class="interest"><span class="k">Language</span><h3>Arabic</h3><p>Keeping the language close — its precision and its poetry, and everything that gets lost and found in translation.</p></div>
+      <div class="interest"><span class="k">Making</span><h3>Home improvement</h3><p>A different kind of systems work: load paths instead of data paths, but the same satisfaction when the thing finally holds.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="cv-cta">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Curriculum vitae</span>
+      <h2 class="section__title">The long version</h2>
+      <p>Roles, the systems behind them, and the throughline from application developer to engineering leader in regulated medical devices.</p>
+    </header>
+    <div class="btn-row">
+      <a class="btn btn--accent" href="#">Read the CV →</a>
+      <a class="btn" href="#">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <div>
+      <div class="site-foot__name">Samir</div>
+      <div class="site-foot__fine">Software engineering leader building safety-critical, connected medical systems.</div>
+    </div>
+    <nav class="site-foot__links" aria-label="Elsewhere">
+      <a href="#">GitHub ↗</a><a href="#">LinkedIn ↗</a><a href="#">Email ↗</a><a href="#">RSS ↗</a>
+    </nav>
+  </div>
+  <div class="wrap"><p class="site-foot__fine">© 2026 Samir · Built with Jekyll, hosted on GitHub Pages · REV 2026.07</p></div>
+</footer>
+</body></html>

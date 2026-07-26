@@ -1,0 +1,31 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+description: Essays on software engineering, thought leadership, and building a software organisation.
+---
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <header class="section__head">
+      <span class="eyebrow">Writing · {{ site.posts | size }} pieces</span>
+      <h1 class="section__title">Writing</h1>
+      <p>On software engineering, thought leadership, and the long, patient work of building a
+        software organisation. <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>.</p>
+    </header>
+
+    <div class="posts">
+      {%- for post in site.posts -%}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <div class="post-row__meta">
+          {{ post.date | date: "%b %-d, %Y" }}
+          <span class="post-row__cat">{{ post.category | default: "Essay" }}</span>
+        </div>
+        <div>
+          <h3 class="post-row__title">{{ post.title }}</h3>
+          <p class="post-row__excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p>
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
