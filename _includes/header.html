@@ -1,0 +1,18 @@
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
+      <svg class="brand__mark" viewBox="0 0 34 20" aria-hidden="true">
+        <path d="M1 10 H9 L11 4 L14 16 L17 7 L19 13 L21 10 H33"/>
+      </svg>
+      <span>{{ site.author.name }}</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {%- assign p = page.url -%}
+      <a href="{{ '/work/'      | relative_url }}" {% if p contains '/work' %}aria-current="page"{% endif %}>Work</a>
+      <a href="{{ '/writing/'   | relative_url }}" {% if p contains '/writing' %}aria-current="page"{% endif %}>Writing</a>
+      <a href="{{ '/cv/'        | relative_url }}" {% if p contains '/cv' %}aria-current="page"{% endif %}>CV</a>
+      <a href="{{ '/interests/' | relative_url }}" {% if p contains '/interests' %}aria-current="page"{% endif %}>Interests</a>
+    </nav>
+  </div>
+</header>
