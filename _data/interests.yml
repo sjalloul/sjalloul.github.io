@@ -1,0 +1,29 @@
+- kind: "Music"
+  title: "French-Arabic house"
+  note: >
+    Somewhere between a Marseille basement and a Cairo rooftop. The rhythmic overlap of
+    two traditions is a whole education in structure.
+
+- kind: "Motorsport"
+  title: "Racing history"
+  note: >
+    The engineering arms race of Formula 1 across the decades — where regulation,
+    ambition, and physics keep re-negotiating the limits.
+
+- kind: "Football"
+  title: "World Cup history"
+  note: >
+    Tournaments as social history. The tactics change, but the stories about who we are
+    stay remarkably constant.
+
+- kind: "Language"
+  title: "Arabic"
+  note: >
+    Keeping the language close — its precision and its poetry, and everything that gets
+    lost and found in translation.
+
+- kind: "Making"
+  title: "Home improvement"
+  note: >
+    A different kind of systems work: load paths instead of data paths, but the same
+    satisfaction when the thing finally holds.

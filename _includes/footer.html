@@ -1,0 +1,17 @@
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <div>
+      <div class="site-foot__name">{{ site.author.name }}</div>
+      <div class="site-foot__fine">{{ site.description }}</div>
+    </div>
+    <nav class="site-foot__links" aria-label="Elsewhere">
+      {%- if site.author.github -%}<a href="https://github.com/{{ site.author.github }}" rel="me">GitHub ↗</a>{%- endif -%}
+      {%- if site.author.linkedin -%}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me">LinkedIn ↗</a>{%- endif -%}
+      {%- if site.author.email -%}<a href="mailto:{{ site.author.email }}">Email ↗</a>{%- endif -%}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="site-foot__fine">© {{ 'now' | date: "%Y" }} {{ site.author.name }} · Built with Jekyll, hosted on GitHub Pages · REV {{ 'now' | date: "%Y.%m" }}</p>
+  </div>
+</footer>
