@@ -49,6 +49,7 @@ description: The long version — roles, systems, and the throughline from appli
       <div>
         <h3 class="cv-role" style="font-size:var(--step-0)">{{ e.role }}</h3>
         <p class="cv-org">{{ e.org }}</p>
+        {% if e.detail %}<p class="cv-detail">{{ e.detail }}</p>{% endif %}
       </div>
     </div>
     {%- endfor -%}
