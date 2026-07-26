@@ -36,23 +36,10 @@ description: Software engineering leader building safety-critical, connected med
         remote-monitored cardiac devices.</p>
     </header>
 
-    <div class="work">
-      {%- for item in site.data.work limit: 4 -%}
-      <a class="work__item" href="{{ item.link | default: '/work/' | relative_url }}">
-        <span class="work__idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        <span>
-          <span class="work__title">{{ item.title }}</span>
-          <p class="work__desc">{{ item.summary }}</p>
-          <span class="work__tags">
-            {%- for t in item.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
-          </span>
-        </span>
-        <span class="work__arrow" aria-hidden="true">→</span>
-      </a>
-      {%- endfor -%}
+    <div class="banner--construction">
+      <span class="k">Under construction</span>
+      <p>This section is being rebuilt — selected work will be back here shortly.</p>
     </div>
-
-    <a class="more-link" href="{{ '/work/' | relative_url }}">See all work</a>
   </div>
 </section>
 
