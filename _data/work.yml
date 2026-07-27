@@ -1,4 +1,11 @@
 # Edit these entries freely — the homepage shows the first 4, /work/ shows all.
+- title: "From the Touchline to the Data Center"
+  summary: >
+    A Northeastern co-op inside The Gillette Company's data center — 400+ servers, disaster
+    recovery planning, and an acquisition by P&G that happened mid-internship.
+  tags: ["Enterprise IT", "Disaster Recovery", "Early Career"]
+  link: "/work/from-the-touchline-to-the-data-center/"
+
 - title: "When the User Is the CMO"
   summary: >
     Early on, I built marketing dashboards for Fortune 100 CMOs who had three minutes and a
