@@ -1,2 +1,7 @@
-# Work section is temporarily hidden (under construction) — see index.html and work.html.
-# Restore entries here when ready to bring the section back.
+# Edit these entries freely — the homepage shows the first 4, /work/ shows all.
+- title: "When the User Is the CMO"
+  summary: >
+    Early on, I built marketing dashboards for Fortune 100 CMOs who had three minutes and a
+    hard question. The audience has changed since. The discipline hasn't.
+  tags: ["Business Intelligence", "Data Visualization", "Requirements"]
+  link: "/work/when-the-user-is-the-cmo/"
