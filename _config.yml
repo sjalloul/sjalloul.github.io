@@ -24,9 +24,16 @@ author:
   role: "Manager, Software Engineering — Applied Science & AI"
   company: "Johnson & Johnson MedTech (Abiomed)"
   location: "Greater Boston, USA"
-  email: "you@example.com"
   github: "sjalloul"
   linkedin: "sjalloul"
+  # Intentionally no plaintext "email:" key here — jekyll-feed would copy it
+  # verbatim into every feed.xml entry. See email_obf below instead.
+
+# Spam-proofed contact address. Jekyll's Liquid has no base64 filter, so this
+# is precomputed: base64(email), then the whole string reversed. Decoded
+# client-side in _includes/email-decode.html (reverse, then atob).
+# To change the address: base64-encode the new one, reverse the result, paste here.
+email_obf: "t92YuwWah12ZAxWdvxGbhp2c"
 
 # ---- Build ----
 markdown: kramdown
