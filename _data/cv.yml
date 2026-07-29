@@ -95,20 +95,6 @@ skills:
   Practice: ["IEC 62304", "FDA cybersecurity", "Cybersecurity", "Agile / Scrum", "Test automation", "Performance & reliability testing"]
   Craft: ["System architecture", "Machine Learning", "Object-Oriented Programming", "Technical program leadership", "Mermaid / diagrams-as-code", "Mentoring", "Cross-functional delivery"]
 
-spoken_languages:
-  - name: "Arabic"
-    level: "Native"
-  - name: "English"
-    level: "Professional"
-  - name: "French"
-    level: "Native"
-  - name: "German"
-    level: "Working"
-  - name: "Russian"
-    level: "Working"
-  - name: "Spanish"
-    level: "Professional"
-
 education:
   - when: "—"
     role: "M.S., Computer Science"
