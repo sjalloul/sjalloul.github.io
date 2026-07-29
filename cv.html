@@ -44,6 +44,17 @@ description: The long version — roles, systems, and the throughline from appli
     {%- endfor -%}
 
     <div style="height:2.5rem"></div>
+    <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Languages</h2>
+    {%- for l in site.data.cv.spoken_languages -%}
+    <div class="cv-block">
+      <div class="cv-when">{{ l.level }}</div>
+      <div>
+        <h3 class="cv-role" style="font-size:var(--step-0)">{{ l.name }}</h3>
+      </div>
+    </div>
+    {%- endfor -%}
+
+    <div style="height:2.5rem"></div>
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Education</h2>
     {%- for e in site.data.cv.education -%}
     <div class="cv-block">
