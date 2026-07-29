@@ -512,14 +512,11 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
    ============================================================= */
 .site-foot { border-top: 1px solid var(--line); margin-top: 2rem; padding: 3rem 0; }
 .site-foot__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end; }
-.site-foot__brand { display: flex; align-items: center; gap: 1rem; }
-.site-foot__mark { height: 30px; width: auto; flex: none; }
 .site-foot__name { font-family: var(--f-display); font-weight: 700; font-size: var(--step-1); }
 .site-foot__links { display: flex; flex-wrap: wrap; gap: 1.4rem; font-family: var(--f-label); font-size: var(--step--1); }
 .site-foot__links a { color: var(--ink-soft); text-decoration: none; }
 .site-foot__links a:hover { color: var(--accent); }
 .site-foot__fine { font-family: var(--f-label); font-size: .74rem; color: var(--muted); margin-top: 1.5rem; }
-.site-foot__tagline { margin-top: .35rem; }
 
 /* accessible focus */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
