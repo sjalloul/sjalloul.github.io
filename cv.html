@@ -11,7 +11,9 @@ description: The long version — roles, systems, and the throughline from appli
       <h1 class="section__title">{{ site.author.name }}</h1>
       <p>{{ site.author.role }} — {{ site.author.company }}. {{ site.author.location }}.</p>
       <div class="btn-row">
-        {% if site.author.email %}<a class="btn btn--accent" href="mailto:{{ site.author.email }}">Get in touch →</a>{% endif %}
+        {% if site.email_obf %}
+        <a class="btn btn--accent" href="#" data-mail="{{ site.email_obf }}" rel="nofollow noopener">Get in touch →</a>
+        {% endif %}
         {% if site.author.github %}<a class="btn" href="https://github.com/{{ site.author.github }}">GitHub ↗</a>{% endif %}
       </div>
     </header>

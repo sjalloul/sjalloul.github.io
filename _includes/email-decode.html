@@ -1,0 +1,12 @@
+<script>
+  (function () {
+    var links = document.querySelectorAll('a[data-mail]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      try {
+        var address = atob(a.getAttribute('data-mail').split('').reverse().join(''));
+        a.setAttribute('href', 'mailto:' + address);
+      } catch (e) {}
+    }
+  })();
+</script>
