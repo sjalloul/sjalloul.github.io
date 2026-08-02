@@ -12,3 +12,10 @@
     hard question. The audience has changed since. The discipline hasn't.
   tags: ["Business Intelligence", "Data Visualization", "Requirements"]
   link: "/work/when-the-user-is-the-cmo/"
+
+- title: "First Contract, Worst Economy: What Six Months at John Hancock Taught Me"
+  summary: >
+    A release-engineering contract in the worst economy of my life, a tie I didn't want, and a
+    CVS-to-ClearCase migration that taught me the trade every tooling decision makes.
+  tags: ["Release Engineering", "Version Control", "Early Career"]
+  link: "/work/first-contract-worst-economy/"
