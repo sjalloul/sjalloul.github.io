@@ -19,3 +19,10 @@
     CVS-to-ClearCase migration that taught me the trade every tooling decision makes.
   tags: ["Release Engineering", "Version Control", "Early Career"]
   link: "/work/first-contract-worst-economy/"
+
+- title: "The Oldest Machine in the Building: What a Mainframe QA Contract Taught Me"
+  summary: >
+    A mainframe QA contract at John Hancock/Manulife, and the case for respecting the load-bearing
+    legacy systems everyone else is itching to rewrite.
+  tags: ["Quality Assurance", "Legacy Systems", "Early Career"]
+  link: "/work/oldest-machine-in-the-building/"
