@@ -21,7 +21,8 @@ description: The long version — roles, systems, and the throughline from appli
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Experience</h2>
     <div class="cv-pin-row">
       <div class="cv-pin-col">
-        <div class="cv-pin-count">22+<small>years · {{ site.data.cv.roles.size }} roles · 8 companies</small></div>
+        {%- assign sector_count = site.data.cv.roles | map: "sector" | uniq | size -%}
+        <div class="cv-pin-count">22+<small>years · {{ site.data.cv.roles.size }} roles · 8 companies · {{ sector_count }} sectors</small></div>
       </div>
       <div class="cv-pin-scroll">
         {%- for r in site.data.cv.roles -%}
@@ -32,7 +33,10 @@ description: The long version — roles, systems, and the throughline from appli
           </div>
           <div>
             <h3 class="cv-role">{{ r.role }}</h3>
-            <p class="cv-org">{{ r.org }}</p>
+            <div class="cv-role-meta">
+              <p class="cv-org">{{ r.org }}</p>
+              {%- if r.sector %}<span class="tag tag--sector">{{ r.sector }}</span>{% endif -%}
+            </div>
             <ul class="cv-points">
               {%- for pt in r.points -%}<li>{{ pt }}</li>{%- endfor -%}
             </ul>
@@ -51,15 +55,7 @@ description: The long version — roles, systems, and the throughline from appli
     <div class="cv-block cv-block--rail" style="--rail-color:var(--{{ rail_var }})">
       <div class="cv-when">{{ group.category }}</div>
       <div class="skills">
-        {%- for s in group.items -%}
-        <span class="tag tag--signal">
-          <span class="signal-dots" aria-hidden="true">
-            {%- for i in (1..3) -%}
-              {%- if i <= s.depth %}<i class="on"></i>{% else %}<i></i>{% endif -%}
-            {%- endfor -%}
-          </span>{{ s.name }}
-        </span>
-        {%- endfor -%}
+        {%- for s in group.items -%}<span class="tag">{{ s }}</span>{%- endfor -%}
       </div>
     </div>
     {%- endfor -%}

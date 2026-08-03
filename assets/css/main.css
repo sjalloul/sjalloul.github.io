@@ -466,7 +466,9 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .cv-when { font-family: var(--f-label); font-size: var(--step--1); color: var(--muted); }
 .cv-duration { display: block; margin-top: .2rem; font-size: .78em; color: var(--line-2); }
 .cv-role { font-family: var(--f-display); font-weight: 600; font-size: var(--step-1); margin: 0 0 .1rem; }
-.cv-org { color: var(--accent-ink); font-style: italic; margin: 0 0 .8rem; }
+.cv-org { color: var(--accent-ink); font-style: italic; margin: 0; }
+.cv-role-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin: 0 0 .8rem; }
+.tag--sector { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, var(--line-2)); }
 .cv-points { margin: 0; padding: 0; list-style: none; }
 .cv-points li { position: relative; padding-left: 1.2rem; margin-bottom: .5rem; color: var(--ink-soft); }
 .cv-points li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
@@ -496,16 +498,12 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   .js-pinned .cv-block--pin, .js-pinned .cv-block--pin.is-active { opacity: 1; transform: none; border-color: var(--line); }
 }
 
-/* Toolkit: category accent rail + signal-depth dots */
+/* Toolkit: category accent rail */
 .cv-block--rail .cv-when { position: relative; padding-left: 1rem; }
 .cv-block--rail .cv-when::before {
   content: ""; position: absolute; left: 0; top: .2rem; bottom: .2rem;
   width: 2px; background: var(--rail-color, var(--accent)); border-radius: 2px;
 }
-.tag--signal { display: inline-flex; align-items: center; gap: .4rem; }
-.signal-dots { display: inline-flex; gap: 2px; }
-.signal-dots i { width: 4px; height: 4px; border-radius: 50%; background: var(--line-2); display: block; }
-.signal-dots i.on { background: var(--accent); }
 
 /* =============================================================
    Prose (post body & pages)
