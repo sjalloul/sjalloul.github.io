@@ -89,11 +89,51 @@ roles:
       - "Supported 400+ Windows server applications across Gillette/P&G's enterprise IT infrastructure."
       - "Built disaster-recovery and business-resumption plans for enterprise systems."
 
+# depth: 1-3, a rough read of how deep/current each skill is — tweak freely.
 skills:
-  Languages: ["Rust", "Python", "Java", "C / C++", "C#/.NET", "R", "MATLAB", "Bash"]
-  Systems & Tools: ["Embedded Linux", "Linux", "OSTree", "U-Boot", "OTA", "Git", "Maven", "Eclipse", "IBM ClearCase", "AWS / AWS Lambda", "NoSQL"]
-  Practice: ["IEC 62304", "FDA cybersecurity", "Cybersecurity", "Agile / Scrum", "Test automation", "Performance & reliability testing"]
-  Craft: ["System architecture", "Machine Learning", "Object-Oriented Programming", "Technical program leadership", "Mermaid / diagrams-as-code", "Mentoring", "Cross-functional delivery"]
+  - category: "Languages"
+    items:
+      - { name: "Rust", depth: 1 }
+      - { name: "Python", depth: 3 }
+      - { name: "Java", depth: 3 }
+      - { name: "C / C++", depth: 2 }
+      - { name: "C#/.NET", depth: 2 }
+      - { name: "R", depth: 1 }
+      - { name: "MATLAB", depth: 1 }
+      - { name: "Bash", depth: 3 }
+
+  - category: "Systems & Tools"
+    items:
+      - { name: "Embedded Linux", depth: 3 }
+      - { name: "Linux", depth: 3 }
+      - { name: "OSTree", depth: 2 }
+      - { name: "U-Boot", depth: 2 }
+      - { name: "OTA", depth: 3 }
+      - { name: "Git", depth: 3 }
+      - { name: "Maven", depth: 2 }
+      - { name: "Eclipse", depth: 1 }
+      - { name: "IBM ClearCase", depth: 1 }
+      - { name: "AWS / AWS Lambda", depth: 2 }
+      - { name: "NoSQL", depth: 1 }
+
+  - category: "Practice"
+    items:
+      - { name: "IEC 62304", depth: 3 }
+      - { name: "FDA cybersecurity", depth: 3 }
+      - { name: "Cybersecurity", depth: 2 }
+      - { name: "Agile / Scrum", depth: 3 }
+      - { name: "Test automation", depth: 3 }
+      - { name: "Performance & reliability testing", depth: 2 }
+
+  - category: "Craft"
+    items:
+      - { name: "System architecture", depth: 3 }
+      - { name: "Machine Learning", depth: 1 }
+      - { name: "Object-Oriented Programming", depth: 2 }
+      - { name: "Technical program leadership", depth: 3 }
+      - { name: "Mermaid / diagrams-as-code", depth: 2 }
+      - { name: "Mentoring", depth: 3 }
+      - { name: "Cross-functional delivery", depth: 3 }
 
 education:
   - when: "—"
