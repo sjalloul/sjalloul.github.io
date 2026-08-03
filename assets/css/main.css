@@ -19,6 +19,7 @@
   --accent:     #A8432B;   /* brick-rust — the pulse */
   --accent-2:   #5D6438;   /* olive companion */
   --accent-ink: #7A2A17;   /* deep clay for hover */
+  --accent-3:   color-mix(in srgb, var(--accent) 50%, var(--accent-2) 50%); /* rust/olive blend */
 
   --maxw: 74rem;
   --gutter: clamp(1.25rem, 4vw, 3rem);
@@ -490,6 +491,17 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   .cv-block--pin { transition: none; }
   .js-pinned .cv-block--pin, .js-pinned .cv-block--pin.is-active { opacity: 1; transform: none; border-color: var(--line); }
 }
+
+/* Toolkit: category accent rail + signal-depth dots */
+.cv-block--rail .cv-when { position: relative; padding-left: 1rem; }
+.cv-block--rail .cv-when::before {
+  content: ""; position: absolute; left: 0; top: .2rem; bottom: .2rem;
+  width: 2px; background: var(--rail-color, var(--accent)); border-radius: 2px;
+}
+.tag--signal { display: inline-flex; align-items: center; gap: .4rem; }
+.signal-dots { display: inline-flex; gap: 2px; }
+.signal-dots i { width: 4px; height: 4px; border-radius: 50%; background: var(--line-2); display: block; }
+.signal-dots i.on { background: var(--accent); }
 
 /* =============================================================
    Prose (post body & pages)

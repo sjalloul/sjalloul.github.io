@@ -45,11 +45,21 @@ description: The long version — roles, systems, and the throughline from appli
 
     <div style="height:2.5rem"></div>
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Toolkit</h2>
+    {%- assign rail_colors = "accent,accent-2,accent-ink,accent-3" | split: "," -%}
     {%- for group in site.data.cv.skills -%}
-    <div class="cv-block">
-      <div class="cv-when">{{ group[0] }}</div>
+    {%- assign rail_var = rail_colors[forloop.index0] | default: "accent" -%}
+    <div class="cv-block cv-block--rail" style="--rail-color:var(--{{ rail_var }})">
+      <div class="cv-when">{{ group.category }}</div>
       <div class="skills">
-        {%- for s in group[1] -%}<span class="tag">{{ s }}</span>{%- endfor -%}
+        {%- for s in group.items -%}
+        <span class="tag tag--signal">
+          <span class="signal-dots" aria-hidden="true">
+            {%- for i in (1..3) -%}
+              {%- if i <= s.depth %}<i class="on"></i>{% else %}<i></i>{% endif -%}
+            {%- endfor -%}
+          </span>{{ s.name }}
+        </span>
+        {%- endfor -%}
       </div>
     </div>
     {%- endfor -%}
