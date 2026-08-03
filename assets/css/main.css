@@ -435,6 +435,28 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .skills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; }
 @media (max-width: 640px) { .cv-block { grid-template-columns: 1fr; gap: .5rem; } }
 
+/* Experience: pinned label, scrolling detail */
+.cv-pin-row { display: grid; grid-template-columns: 12rem 1fr; gap: 1.5rem 2.5rem; }
+.cv-pin-col { position: sticky; top: 6rem; align-self: start; height: max-content; }
+.cv-pin-count { font-family: var(--f-display); font-weight: 600; font-size: var(--step-3); color: var(--ink); line-height: 1; }
+.cv-pin-count small { display: block; font-family: var(--f-label); font-weight: 400; font-size: var(--step--1); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: .6rem; }
+.cv-block--pin {
+  border-top: 0; border-left: 2px solid var(--line); padding-left: 1.4rem; margin-left: -1px;
+  min-height: 34vh; align-content: center;
+  transition: opacity .5s ease, transform .5s ease, border-color .5s ease;
+}
+.js-pinned .cv-block--pin { opacity: .55; transform: scale(.99); }
+.js-pinned .cv-block--pin.is-active { opacity: 1; transform: scale(1); border-color: var(--accent); }
+@media (max-width: 640px) {
+  .cv-pin-row { grid-template-columns: 1fr; }
+  .cv-pin-col { position: static; margin-bottom: 1rem; }
+  .cv-block--pin { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv-block--pin { transition: none; }
+  .js-pinned .cv-block--pin, .js-pinned .cv-block--pin.is-active { opacity: 1; transform: none; border-color: var(--line); }
+}
+
 /* =============================================================
    Prose (post body & pages)
    ============================================================= */

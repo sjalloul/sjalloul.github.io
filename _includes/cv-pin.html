@@ -1,0 +1,22 @@
+<script>
+(function () {
+  var row = document.querySelector('.cv-pin-row');
+  if (!row) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var blocks = row.querySelectorAll('.cv-block--pin');
+  if (!blocks.length || typeof IntersectionObserver === 'undefined') return;
+  row.classList.add('js-pinned');
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        blocks.forEach(function (b) { b.classList.remove('is-active'); });
+        entry.target.classList.add('is-active');
+      }
+    });
+  }, { root: null, rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  blocks.forEach(function (b) { io.observe(b); });
+})();
+</script>

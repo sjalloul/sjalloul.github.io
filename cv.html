@@ -19,21 +19,29 @@ description: The long version — roles, systems, and the throughline from appli
     </header>
 
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Experience</h2>
-    {%- for r in site.data.cv.roles -%}
-    <div class="cv-block">
-      <div class="cv-when">
-        {{ r.when }}
-        {%- if r.duration %}<span class="cv-duration">{{ r.duration }}</span>{%- endif %}
+    <div class="cv-pin-row">
+      <div class="cv-pin-col">
+        <div class="cv-pin-count">22+<small>years · {{ site.data.cv.roles.size }} roles · 8 companies</small></div>
       </div>
-      <div>
-        <h3 class="cv-role">{{ r.role }}</h3>
-        <p class="cv-org">{{ r.org }}</p>
-        <ul class="cv-points">
-          {%- for pt in r.points -%}<li>{{ pt }}</li>{%- endfor -%}
-        </ul>
+      <div class="cv-pin-scroll">
+        {%- for r in site.data.cv.roles -%}
+        <div class="cv-block cv-block--pin">
+          <div class="cv-when">
+            {{ r.when }}
+            {%- if r.duration %}<span class="cv-duration">{{ r.duration }}</span>{%- endif %}
+          </div>
+          <div>
+            <h3 class="cv-role">{{ r.role }}</h3>
+            <p class="cv-org">{{ r.org }}</p>
+            <ul class="cv-points">
+              {%- for pt in r.points -%}<li>{{ pt }}</li>{%- endfor -%}
+            </ul>
+          </div>
+        </div>
+        {%- endfor -%}
       </div>
     </div>
-    {%- endfor -%}
+    {% include cv-pin.html %}
 
     <div style="height:2.5rem"></div>
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Toolkit</h2>
