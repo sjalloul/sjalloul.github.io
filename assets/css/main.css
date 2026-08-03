@@ -171,8 +171,8 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   transform-origin: left;
   transition: transform .22s ease;
 }
-.nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
-.nav a[aria-current="page"] { color: var(--ink); }
+.nav a:hover::after, .nav a[aria-current="page"]::after, .nav a.is-inview::after { transform: scaleX(1); }
+.nav a[aria-current="page"], .nav a.is-inview { color: var(--ink); }
 
 .nav-toggle { display: none; }
 
