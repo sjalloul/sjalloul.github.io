@@ -27,6 +27,7 @@
   --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
   --f-label:   "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --f-name:    "Fraunces", "Source Serif 4", Georgia, serif; /* the personal name mark — more character than body headings */
 
   --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
   --step-0:  clamp(1.02rem, 0.98rem + 0.2vw, 1.14rem);
@@ -117,6 +118,9 @@ h1, h2, h3, h4 {
 }
 h2 { font-size: var(--step-2); }
 h3 { font-size: var(--step-1); letter-spacing: -0.01em; }
+
+/* Personal name mark — Fraunces, in place of the plain heading serif */
+.name-mark { font-family: var(--f-name); font-weight: 600; letter-spacing: -0.015em; }
 
 p { margin: 0 0 1.15em; }
 p a, .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); }
@@ -586,7 +590,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
    ============================================================= */
 .site-foot { border-top: 1px solid var(--line); margin-top: 2rem; padding: 3rem 0; }
 .site-foot__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: end; }
-.site-foot__name { font-family: var(--f-display); font-weight: 700; font-size: var(--step-1); }
+.site-foot__name { font-family: var(--f-name); font-weight: 600; font-size: var(--step-1); letter-spacing: -0.01em; }
 .site-foot__links { display: flex; flex-wrap: wrap; gap: 1.4rem; font-family: var(--f-label); font-size: var(--step--1); }
 .site-foot__links a { color: var(--ink-soft); text-decoration: none; }
 .site-foot__links a:hover { color: var(--accent); }
