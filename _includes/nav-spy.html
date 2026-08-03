@@ -20,4 +20,18 @@
 
   sections.forEach(function (s) { io.observe(s); });
 })();
+
+(function () {
+  var cue = document.getElementById('scroll-cue');
+  if (!cue) return;
+  var hidden = false;
+  function onScroll() {
+    var shouldHide = window.scrollY > 80;
+    if (shouldHide !== hidden) {
+      hidden = shouldHide;
+      cue.classList.toggle('is-hidden', hidden);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
 </script>
