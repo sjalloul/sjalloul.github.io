@@ -8,11 +8,11 @@
 
     <nav class="nav" aria-label="Primary">
       {%- assign p = page.url -%}
-      <a href="{{ '/work/'      | relative_url }}" {% if p contains '/work' %}aria-current="page"{% endif %}>Work</a>
-      <a href="{{ '/writing/'   | relative_url }}" {% if p contains '/writing' %}aria-current="page"{% endif %}>Writing</a>
-      <a href="{{ '/cv/'        | relative_url }}" {% if p contains '/cv' %}aria-current="page"{% endif %}>CV</a>
-      <a href="{{ '/interests/' | relative_url }}" {% if p contains '/interests' %}aria-current="page"{% endif %}>Interests</a>
-      <a href="{{ '/status/'    | relative_url }}" {% if p contains '/status' %}aria-current="page"{% endif %}>Status</a>
+      <a href="{{ '/work/'      | relative_url }}" data-nav="work"      {% if p contains '/work' %}aria-current="page"{% endif %}>Work</a>
+      <a href="{{ '/writing/'   | relative_url }}" data-nav="writing"   {% if p contains '/writing' %}aria-current="page"{% endif %}>Writing</a>
+      <a href="{{ '/cv/'        | relative_url }}" data-nav="cv"        {% if p contains '/cv' %}aria-current="page"{% endif %}>CV</a>
+      <a href="{{ '/interests/' | relative_url }}" data-nav="interests" {% if p contains '/interests' %}aria-current="page"{% endif %}>Interests</a>
+      <a href="{{ '/status/'    | relative_url }}" data-nav="status"    {% if p contains '/status' %}aria-current="page"{% endif %}>Status</a>
     </nav>
   </div>
 </header>
