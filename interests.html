@@ -14,8 +14,12 @@ description: Off the clock — music, motorsport, football history, language, an
     </header>
 
     <div class="interests">
+      {%- assign rail_colors = "accent,accent-2,accent-ink,accent-3" | split: "," -%}
       {%- for it in site.data.interests -%}
-      <div class="interest">
+      {%- assign rail_idx = forloop.index0 | modulo: 4 -%}
+      {%- assign rail_var = rail_colors[rail_idx] | default: "accent" -%}
+      <div class="interest interest--rail" style="--rail-color:var(--{{ rail_var }})">
+        <span class="interest__mark" aria-hidden="true"></span>
         <span class="k">{{ it.kind }}</span>
         <h3>{{ it.title }}</h3>
         <p>{{ it.note }}</p>
