@@ -458,6 +458,28 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .interest p { color: var(--muted); font-size: var(--step--1); margin: 0; line-height: 1.5; }
 .interest .k { font-family: var(--f-label); font-size: .72rem; color: var(--accent-2); text-transform: uppercase; letter-spacing: .1em; display:block; margin-bottom:.7rem; }
 
+.interest--rail {
+  position: relative;
+  border-left: 3px solid var(--rail-color, var(--accent));
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background: color-mix(in srgb, var(--rail-color, var(--accent)) 7%, color-mix(in srgb, var(--paper) 60%, #fff));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.interest--rail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px -14px color-mix(in srgb, var(--rail-color, var(--accent)) 60%, transparent);
+}
+.interest--rail .k { color: var(--rail-color, var(--accent-2)); }
+.interest__mark {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  width: .5rem; height: .5rem;
+  background: var(--rail-color, var(--accent));
+  border-radius: 2px;
+  transform: rotate(45deg);
+  opacity: .5;
+}
+
 /* =============================================================
    CV
    ============================================================= */
