@@ -172,7 +172,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .status-strip__link {
   flex: none; align-self: center;
   font-family: var(--f-label); font-size: .78rem; color: var(--accent-ink);
-  text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px;
+  text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px;
   white-space: nowrap;
 }
 .status-strip__link:hover { color: var(--accent); }
