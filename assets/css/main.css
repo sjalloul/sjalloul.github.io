@@ -157,25 +157,24 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .brand__mark { width: 34px; height: 20px; color: var(--accent); }
 .brand__mark path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
-.site-head__left { display: flex; align-items: center; gap: 1.1rem; min-width: 0; }
-.head-status {
-  display: flex; align-items: center; gap: .5rem;
-  text-decoration: none; color: var(--muted);
-  font-family: var(--f-label); font-size: .78rem;
-  padding: .32rem .8rem; border: 1px solid var(--line); border-radius: 999px;
+.status-strip {
+  border-bottom: 1px solid var(--line);
   background: var(--paper-2);
-  max-width: clamp(9rem, 20vw, 22rem);
-  min-width: 0;
-  transition: border-color .2s ease, color .2s ease;
 }
-.head-status:hover { border-color: var(--accent); color: var(--ink); }
-.head-status__dot {
+.status-strip__inner { padding: .55rem 0; }
+.status-strip__link {
+  display: flex; align-items: center; gap: .55rem;
+  text-decoration: none; color: var(--ink-soft);
+  font-family: var(--f-label); font-size: .82rem;
+  min-width: 0;
+}
+.status-strip__link:hover { color: var(--ink); }
+.status-strip__dot {
   width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none;
   animation: status-pulse 2s ease-in-out infinite;
 }
-.head-status__text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-@media (prefers-reduced-motion: reduce) { .head-status__dot { animation: none; opacity: 1; } }
-@media (max-width: 900px) { .head-status { display: none; } }
+.status-strip__text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (prefers-reduced-motion: reduce) { .status-strip__dot { animation: none; opacity: 1; } }
 
 .nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.2rem); }
 .nav a {
