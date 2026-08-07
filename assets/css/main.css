@@ -145,9 +145,6 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   letter-spacing: -0.01em;
   font-size: 1.06rem;
 }
-.brand__mark { width: 34px; height: 20px; color: var(--accent); }
-.brand__mark path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-
 .status-strip {
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--paper) 70%, transparent);
@@ -216,7 +213,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 /* =============================================================
    Hero
    ============================================================= */
-.hero { padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem); }
+.hero { padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem); }
 
 .hero__grid {
   display: grid;
