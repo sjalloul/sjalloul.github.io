@@ -147,7 +147,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 }
 .brand__hud { width: 26px; height: 26px; color: var(--accent); transition: transform .2s ease; }
 .brand__hud path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.brand__hud-dot { fill: currentColor; }
+.brand__hud-bits { font-family: var(--f-label); font-size: 8px; font-weight: 700; letter-spacing: .01em; fill: currentColor; }
 .brand:hover .brand__hud { transform: scale(1.12); }
 @media (prefers-reduced-motion: reduce) { .brand__hud { transition: none; } .brand:hover .brand__hud { transform: none; } }
 .status-strip {
