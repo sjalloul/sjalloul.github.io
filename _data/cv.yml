@@ -5,7 +5,6 @@ roles:
     org: "Johnson & Johnson MedTech (Abiomed)"
     sector: "Medical Devices"
     points:
-      - "Lead the Applied Science & AI software engineering team building connected platforms for Abiomed's cardiac assist devices."
       - "Own technical direction and delivery for the team, continuing work on OTA updates, remote-monitoring connectivity, and regulated software lifecycle (IEC 62304)."
       - "Promoted into engineering leadership after three years driving the same mission as Principal TPM."
 
@@ -15,7 +14,6 @@ roles:
     org: "Johnson & Johnson MedTech (Abiomed)"
     sector: "Medical Devices"
     points:
-      - "Drove technical program management for software and device platforms advancing Abiomed's cardiac care mission."
       - "Coordinated cross-functional delivery across engineering, data science, and regulatory stakeholders on a connected cardiac-assist device platform."
       - "Owned architecture and roadmap threads spanning OTA updates, remote monitoring connectivity, and IEC 62304 / FDA cybersecurity alignment."
 
@@ -25,7 +23,6 @@ roles:
     org: "HighRes Biosolutions"
     sector: "Lab Automation & Robotics"
     points:
-      - "Delivered custom software and lab-automation solutions for pharma and biotech customers, including Novo Nordisk, Pfizer, Amgen, Merck, BMS, and Beam Therapeutics."
       - "Ran Agile delivery across concurrent customer engagements in a fast-moving automation/robotics product line."
 
   - when: "Mar 2018 — Oct 2021"
@@ -34,7 +31,6 @@ roles:
     org: "Amundi US"
     sector: "Asset Management"
     points:
-      - "Set testing strategy and led automation, performance, and reliability testing, balancing hands-on QA work with technical direction and mentoring."
       - "Built and supported automated testing frameworks for high-profile platforms using open-source tooling."
       - "Led onshore and offshore automation engineers; defined and reported quality metrics inside the Agile/Scrum cadence."
 
@@ -44,7 +40,6 @@ roles:
     org: "Amundi US"
     sector: "Asset Management"
     points:
-      - "Built automation frameworks spanning integration, web-service, mobile, and GUI testing across product lines."
       - "Mentored a team of functional testers and automation engineers, working directly with developers and product managers to catch defects early."
 
   - when: "May 2010 — Dec 2014"
@@ -53,7 +48,6 @@ roles:
     org: "Plymouth Rock Assurance"
     sector: "Insurance"
     points:
-      - "Architected a data-driven testing framework for on-the-fly test case authoring and execution."
       - "Built tooling to parse XML test data and streamline testing across eService, eSales 2.0, and Agency Interface 2.0."
 
   - when: "Apr 2010 — Sep 2010"
@@ -62,7 +56,6 @@ roles:
     org: "Recorded Future"
     sector: "Threat Intelligence"
     points:
-      - "Worked on study design, data analysis, and algorithm prototyping, including supervised, reinforcement, and transduction learning approaches."
       - "Modeled in MATLAB, C/C++, and R across distributed, data-intensive batch processing."
 
   - when: "Jul 2009 — Feb 2010"
@@ -71,7 +64,6 @@ roles:
     org: "John Hancock Life Insurance (Manulife)"
     sector: "Insurance"
     points:
-      - "Supported the Subsidiary 2/3 project's Accounting (eTreasury) and Traditional/Non-Traditional product workstreams."
       - "Aligned business requirements with SDLC quality controls across complex mainframe and UNIX systems."
 
   - when: "Jan 2009 — Jun 2009"
@@ -80,7 +72,6 @@ roles:
     org: "John Hancock Life Insurance (Manulife)"
     sector: "Insurance"
     points:
-      - "Migrated .NET/NAnt and Java/Maven build repositories from CVS to IBM ClearCase without disrupting development teams."
       - "Owned release and deployment coordination across QA, UAT, and production environments."
 
   - when: "Oct 2007 — Dec 2008"
@@ -97,7 +88,6 @@ roles:
     org: "Procter & Gamble"
     sector: "Consumer Goods"
     points:
-      - "Supported 400+ Windows server applications across Gillette/P&G's enterprise IT infrastructure."
       - "Built disaster-recovery and business-resumption plans for enterprise systems."
 
 skills:
