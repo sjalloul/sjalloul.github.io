@@ -159,22 +159,37 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 
 .status-strip {
   border-bottom: 1px solid var(--line);
-  background: var(--paper-2);
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  backdrop-filter: blur(8px);
 }
-.status-strip__inner { padding: .55rem 0; }
-.status-strip__link {
-  display: flex; align-items: center; gap: .55rem;
-  text-decoration: none; color: var(--ink-soft);
-  font-family: var(--f-label); font-size: .82rem;
-  min-width: 0;
+.status-strip__inner { display: flex; align-items: center; gap: .9rem; padding: .75rem 0; }
+.status-strip__photo {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; object-fit: cover; flex: none;
+  border: 2px solid var(--paper); outline: 1px solid var(--line);
 }
-.status-strip__link:hover { color: var(--ink); }
+.status-strip__body { min-width: 0; flex: 1; }
+.status-strip__label {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--f-label); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent-2);
+}
 .status-strip__dot {
   width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none;
   animation: status-pulse 2s ease-in-out infinite;
 }
-.status-strip__text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status-strip__text { margin: .25rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.45; }
+.status-strip__link {
+  flex: none; align-self: center;
+  font-family: var(--f-label); font-size: .78rem; color: var(--accent-ink);
+  text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px;
+  white-space: nowrap;
+}
+.status-strip__link:hover { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .status-strip__dot { animation: none; opacity: 1; } }
+@media (max-width: 640px) {
+  .status-strip__inner { flex-wrap: wrap; }
+  .status-strip__link { width: 100%; margin-left: calc(2.5rem + .9rem); padding-top: .2rem; }
+}
 
 .nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.2rem); }
 .nav a {
