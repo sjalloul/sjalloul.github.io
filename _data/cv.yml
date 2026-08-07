@@ -105,17 +105,15 @@ skills:
 
 education:
   - when: ""
-    seal: "B"
-    seal_name: "Boston University"
-    seal_year: "1839"
+    seal_img: "seal-boston.png"
+    seal_name: "Boston University seal"
     role: "M.S., Computer Science"
     org: "Boston University"
     detail: "GPA 3.95/4.00 · MATLAB, C, and related coursework"
 
   - when: ""
-    seal: "N"
-    seal_name: "Northeastern University"
-    seal_year: "1898"
+    seal_img: "seal-northeastern.png"
+    seal_name: "Northeastern University seal"
     role: "B.S., Entrepreneurship & Growth Venture Creation / Management Information Systems"
     org: "D'Amore-McKim School of Business, Northeastern University"
     detail: "GPA 3.29/4.00 · Magna Cum Laude · President, MIS Club (2005–06) · Co-op rotations with The Gillette Company through its merger with Procter & Gamble, Global Architecture & Technology org"
