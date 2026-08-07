@@ -1,0 +1,31 @@
+<script>
+(function () {
+  var path = document.querySelector('.pulse .trace');
+  var blip = document.querySelector('.pulse .blip');
+  if (!path) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - doc.clientHeight;
+    var progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progress = Math.max(0, Math.min(1, progress));
+    path.style.strokeDashoffset = len * (1 - progress);
+    if (blip) blip.style.opacity = progress > 0.92 ? 1 : 0;
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>

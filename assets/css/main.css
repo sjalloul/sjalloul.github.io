@@ -157,6 +157,26 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .brand__mark { width: 34px; height: 20px; color: var(--accent); }
 .brand__mark path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
+.site-head__left { display: flex; align-items: center; gap: 1.1rem; min-width: 0; }
+.head-status {
+  display: flex; align-items: center; gap: .5rem;
+  text-decoration: none; color: var(--muted);
+  font-family: var(--f-label); font-size: .78rem;
+  padding: .32rem .8rem; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--paper-2);
+  max-width: clamp(9rem, 20vw, 22rem);
+  min-width: 0;
+  transition: border-color .2s ease, color .2s ease;
+}
+.head-status:hover { border-color: var(--accent); color: var(--ink); }
+.head-status__dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+.head-status__text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (prefers-reduced-motion: reduce) { .head-status__dot { animation: none; opacity: 1; } }
+@media (max-width: 900px) { .head-status { display: none; } }
+
 .nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.2rem); }
 .nav a {
   font-family: var(--f-label);
@@ -340,14 +360,12 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .pulse .trace {
   stroke-dasharray: 1400;
   stroke-dashoffset: 1400;
-  animation: draw 2.6s cubic-bezier(.65,0,.35,1) .2s forwards;
+  transition: stroke-dashoffset .1s linear;
 }
-.pulse .blip { fill: var(--accent); opacity: 0; animation: blip 2.6s linear .2s forwards; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes blip { 0%,88%{opacity:0} 92%{opacity:1} 100%{opacity:1} }
+.pulse .blip { fill: var(--accent); opacity: 0; transition: opacity .2s ease; }
 @media (prefers-reduced-motion: reduce) {
-  .pulse .trace { animation: none; stroke-dashoffset: 0; }
-  .pulse .blip { animation: none; opacity: 1; }
+  .pulse .trace { transition: none; stroke-dashoffset: 0; }
+  .pulse .blip { transition: none; opacity: 1; }
 }
 
 /* =============================================================
