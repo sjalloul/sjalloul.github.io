@@ -485,8 +485,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .cv-points li { position: relative; padding-left: 1.2rem; margin-bottom: .5rem; color: var(--ink-soft); }
 .cv-points li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 .cv-detail { color: var(--ink-soft); margin: 0; font-size: var(--step-0); }
-.cv-seal { display: block; width: 3.6rem; height: 3.6rem; margin-top: .3rem; color: var(--accent); }
-.cv-seal svg { width: 100%; height: 100%; }
+.cv-seal { display: block; width: 3.6rem; height: 3.6rem; margin-top: .3rem; }
 .skills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; }
 @media (max-width: 640px) { .cv-block { grid-template-columns: 1fr; gap: .5rem; } }
 

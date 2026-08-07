@@ -66,31 +66,8 @@ description: The long version — roles, systems, and the throughline from appli
     <div class="cv-block">
       <div class="cv-when">
         {{ e.when }}
-        {%- if e.seal %}
-        <span class="cv-seal" aria-hidden="true">
-          <svg viewBox="0 0 120 120">
-            <defs>
-              <path id="sealTop{{ e.seal }}" d="M 21,60 A 39,39 0 0,1 99,60" />
-              <path id="sealBottom{{ e.seal }}" d="M 99,60 A 39,39 0 0,0 21,60" />
-            </defs>
-            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="0.9"/>
-            <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="0.9"/>
-            <g>
-              {%- for i in (0..29) -%}
-              {%- assign ang = i | times: 12 -%}
-              <line x1="60" y1="7" x2="60" y2="13" stroke="currentColor" stroke-width="0.7" opacity="0.5" transform="rotate({{ ang }} 60 60)"/>
-              {%- endfor -%}
-            </g>
-            <text font-family="Georgia, 'Times New Roman', serif" font-size="7.2" letter-spacing="1.6" fill="currentColor">
-              <textPath href="#sealTop{{ e.seal }}" startOffset="50%" text-anchor="middle">{{ e.seal_name | upcase }}</textPath>
-            </text>
-            <text font-family="Georgia, 'Times New Roman', serif" font-size="6.4" letter-spacing="2.6" fill="currentColor">
-              <textPath href="#sealBottom{{ e.seal }}" startOffset="50%" text-anchor="middle">FOUNDED {{ e.seal_year }}</textPath>
-            </text>
-            <text x="60" y="70" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="28" fill="currentColor">{{ e.seal }}</text>
-          </svg>
-        </span>
+        {%- if e.seal_img %}
+        <img class="cv-seal" src="{{ '/assets/img/' | append: e.seal_img | relative_url }}" alt="{{ e.seal_name }}" width="120" height="120" loading="lazy">
         {%- endif %}
       </div>
       <div>
