@@ -30,14 +30,6 @@ description: Software engineering leader building safety-critical, connected med
     <div class="hero__photo">
       <div class="status-card">
         <img class="status-card__photo" src="{{ '/assets/img/samir-headshot.jpg' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="480" height="480">
-        {%- assign latest_status = site.data.status.first -%}
-        {%- if latest_status -%}
-        <div class="status-card__body">
-          <span class="status-bubble__label">Status · {{ latest_status.date | date: "%b %-d" }}</span>
-          <p class="status-bubble__text">{{ latest_status.text }}</p>
-          <a class="status-bubble__link" href="{{ '/status/' | relative_url }}">History →</a>
-        </div>
-        {%- endif -%}
       </div>
     </div>
   </div>
