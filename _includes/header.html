@@ -1,19 +1,10 @@
 <header class="site-head">
   <div class="wrap site-head__inner">
-    <div class="site-head__left">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
-        <svg class="brand__mark" viewBox="0 0 34 20" aria-hidden="true">
-          <path d="M1 10 H9 L11 4 L14 16 L17 7 L19 13 L21 10 H33"/>
-        </svg>
-      </a>
-      {%- assign latest_status = site.data.status.first -%}
-      {%- if latest_status -%}
-      <a class="head-status" href="{{ '/status/' | relative_url }}">
-        <span class="head-status__dot" aria-hidden="true"></span>
-        <span class="head-status__text">{{ latest_status.text | truncate: 64 }}</span>
-      </a>
-      {%- endif -%}
-    </div>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
+      <svg class="brand__mark" viewBox="0 0 34 20" aria-hidden="true">
+        <path d="M1 10 H9 L11 4 L14 16 L17 7 L19 13 L21 10 H33"/>
+      </svg>
+    </a>
 
     <nav class="nav" aria-label="Primary">
       {%- assign p = page.url -%}
@@ -25,3 +16,15 @@
     </nav>
   </div>
 </header>
+
+{%- assign latest_status = site.data.status.first -%}
+{%- if latest_status -%}
+<div class="status-strip">
+  <div class="wrap status-strip__inner">
+    <a class="status-strip__link" href="{{ '/status/' | relative_url }}">
+      <span class="status-strip__dot" aria-hidden="true"></span>
+      <span class="status-strip__text">{{ latest_status.text | truncate: 120 }}</span>
+    </a>
+  </div>
+</div>
+{%- endif -%}
