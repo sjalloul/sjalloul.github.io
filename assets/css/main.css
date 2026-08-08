@@ -288,7 +288,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   margin: .3rem 0 1.4rem;
 }
 .hero__portrait {
-  width: clamp(64px, 11vw, 140px); height: auto; flex: none;
+  width: clamp(100px, 18vw, 210px); height: auto; flex: none;
   border: 1px solid var(--line); border-radius: 6px;
 }
 .hero__lede {
@@ -303,9 +303,6 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 .hero__lede em { font-style: italic; color: var(--accent); }
 @media (max-width: 640px) {
   .hero__lede { font-size: clamp(2rem, 9vw, 2.8rem); }
-}
-@media (max-width: 400px) {
-  .hero__portrait { width: 56px; }
 }
 .hero__sub {
   font-size: var(--step-1);
