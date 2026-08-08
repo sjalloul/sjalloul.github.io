@@ -16,13 +16,11 @@ description: Off the clock — music, motorsport, football history, language, an
     <div class="interests">
       {%- for it in site.data.interests -%}
       <div class="interest-row">
+        <span class="interest-row__kind">{{ it.kind }}</span>
         <div>
-          <span class="interest-row__kind">{{ it.kind }}</span>
           {%- if it.image %}
           <img class="interest-row__img" src="{{ '/assets/img/' | append: it.image | relative_url }}" alt="" loading="lazy">
           {%- endif %}
-        </div>
-        <div>
           <h3 class="interest-row__title">{{ it.title }}</h3>
           <p class="interest-row__note">{{ it.note }}</p>
         </div>
