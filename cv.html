@@ -6,16 +6,19 @@ description: The long version — roles, systems, and the throughline from appli
 ---
 <section class="section" style="border-top:0">
   <div class="wrap">
-    <header class="section__head">
-      <h1 class="section__title name-mark">{{ site.author.name }}</h1>
-      <p>{{ site.author.role }} — {{ site.author.company }}. {{ site.author.location }}.</p>
-      <div class="btn-row">
-        {% if site.email_obf %}
-        <a class="btn btn--accent" href="#" data-mail="{{ site.email_obf }}" rel="nofollow noopener">Get in touch →</a>
-        {% endif %}
-        {% if site.author.github %}<a class="btn" href="https://github.com/{{ site.author.github }}">GitHub ↗</a>{% endif %}
-      </div>
-    </header>
+    <div class="cv-header">
+      <img class="cv-portrait" src="{{ '/assets/img/samir-portrait.png' | relative_url }}" alt="{{ site.author.name }}" width="600" height="750" loading="eager">
+      <header class="section__head">
+        <h1 class="section__title name-mark">{{ site.author.name }}</h1>
+        <p>{{ site.author.role }} — {{ site.author.company }}. {{ site.author.location }}.</p>
+        <div class="btn-row">
+          {% if site.email_obf %}
+          <a class="btn btn--accent" href="#" data-mail="{{ site.email_obf }}" rel="nofollow noopener">Get in touch →</a>
+          {% endif %}
+          {% if site.author.github %}<a class="btn" href="https://github.com/{{ site.author.github }}">GitHub ↗</a>{% endif %}
+        </div>
+      </header>
+    </div>
 
     <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Experience</h2>
     <div class="cv-pin-row">
