@@ -9,7 +9,10 @@ description: Software engineering leader building safety-critical, connected med
   <div class="wrap hero__grid">
     <div class="hero__content">
       <span class="eyebrow">Engineering leadership · Regulated software · Citizen of the world</span>
-      <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
+      <div class="hero__headline">
+        <img class="hero__portrait" src="{{ '/assets/img/samir-portrait.png' | relative_url }}" alt="{{ site.author.name }}" width="500" height="625" loading="eager">
+        <h1 class="hero__lede">I build connected medical software <em>and the teams that ship it.</em></h1>
+      </div>
       <p class="hero__sub">
         Accomplished {{ site.author.role }}. Two decades from application code to
         safety-critical embedded systems, now leading the platforms that keep cardiac patients
@@ -103,10 +106,15 @@ description: Software engineering leader building safety-critical, connected med
 
     <div class="interests">
       {%- for it in site.data.interests -%}
-      <div class="interest">
-        <span class="k">{{ it.kind }}</span>
-        <h3>{{ it.title }}</h3>
-        <p>{{ it.note }}</p>
+      <div class="interest-row">
+        <span class="interest-row__kind">{{ it.kind }}</span>
+        <div>
+          {%- if it.image %}
+          <img class="interest-row__img" src="{{ '/assets/img/' | append: it.image | relative_url }}" alt="" loading="lazy">
+          {%- endif %}
+          <h3 class="interest-row__title">{{ it.title }}</h3>
+          <p class="interest-row__note">{{ it.note }}</p>
+        </div>
       </div>
       {%- endfor -%}
     </div>
