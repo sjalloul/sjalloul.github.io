@@ -76,5 +76,22 @@ description: The long version — roles, systems, and the throughline from appli
       </div>
     </div>
     {%- endfor -%}
+
+    <div style="height:2.5rem"></div>
+    <h2 class="eyebrow" style="font-size:var(--step-0);color:var(--ink);letter-spacing:.02em">Patents</h2>
+    {%- for p in site.data.cv.patents -%}
+    <div class="cv-block">
+      <div class="cv-when">
+        {{ p.status }}
+        <span class="cv-duration">Filed {{ p.filed }}</span>
+      </div>
+      <div>
+        <h3 class="cv-role" style="font-size:var(--step-0)">{{ p.title }}</h3>
+        <p class="cv-org">{{ p.number }} · Published {{ p.published }}</p>
+        <p class="cv-detail">{{ p.abstract }}</p>
+        {% if p.inventors %}<p class="cv-inventors">With {{ p.inventors }}</p>{% endif %}
+      </div>
+    </div>
+    {%- endfor -%}
   </div>
 </section>

@@ -117,3 +117,15 @@ education:
     role: "B.S., Entrepreneurship & Growth Venture Creation / Management Information Systems"
     org: "D'Amore-McKim School of Business, Northeastern University"
     detail: "GPA 3.29/4.00 · Magna Cum Laude · President, MIS Club (2005–06) · Co-op rotations with The Gillette Company through its merger with Procter & Gamble, Global Architecture & Technology org"
+
+patents:
+  - title: "Systems and Methods for Displaying, Monitoring and Simulating Hemodynamic Signals, Indicators and/or Outcomes"
+    number: "US 2025/0182876 A1"
+    status: "Patent Application"
+    filed: "Dec 5, 2024"
+    published: "Jun 5, 2025"
+    inventors: "Christian Moyer, Ahmad El Katerji, Erik Ian Kroeker, Samir Jalloul, Steven Balk, Glen Fantuzzi, Tyler Valentine"
+    abstract: >
+      Methods and apparatus for simulating a state of a patient — receiving parameters tied to
+      a medical device, procedure, treatment, or condition; simulating patient state from those
+      parameters against a patient model; and displaying the result on a user interface.
