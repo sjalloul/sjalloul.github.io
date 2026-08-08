@@ -281,16 +281,27 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 
 .status-list__text { color: var(--ink-soft); margin: 0; max-width: 60ch; overflow-wrap: break-word; }
 
+.hero__headline {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3.5vw, 2.25rem);
+  margin: .3rem 0 1.4rem;
+}
+.hero__portrait { width: clamp(84px, 11vw, 140px); height: auto; flex: none; border-radius: 6px; }
 .hero__lede {
   font-size: var(--step-4);
   font-family: var(--f-display);
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.018em;
-  margin: .3rem 0 1.4rem;
+  margin: 0;
   max-width: 20ch;
 }
 .hero__lede em { font-style: italic; color: var(--accent); }
+@media (max-width: 640px) {
+  .hero__headline { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero__portrait { width: 100px; }
+}
 .hero__sub {
   font-size: var(--step-1);
   max-width: 46ch;
