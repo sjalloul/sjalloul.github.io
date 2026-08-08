@@ -177,10 +177,6 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   backdrop-filter: blur(8px);
 }
 .status-strip__inner { display: flex; align-items: center; gap: .9rem; padding: .75rem 0; }
-.status-strip__photo {
-  width: 2.5rem; height: 2.5rem; border-radius: 50%; object-fit: cover; flex: none;
-  border: 2px solid var(--paper); outline: 1px solid var(--line);
-}
 .status-strip__body { min-width: 0; flex: 1; }
 .status-strip__label {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -202,7 +198,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 @media (prefers-reduced-motion: reduce) { .status-strip__dot { animation: none; opacity: 1; } }
 @media (max-width: 640px) {
   .status-strip__inner { flex-wrap: wrap; }
-  .status-strip__link { width: calc(100% - 2.5rem - .9rem); margin-left: calc(2.5rem + .9rem); padding-top: .2rem; }
+  .status-strip__link { width: 100%; padding-top: .2rem; }
 }
 
 .nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.2rem); }
