@@ -93,30 +93,6 @@ description: Software engineering leader building safety-critical, connected med
   </div>
 </section>
 
-<!-- ============ INTERESTS ============ -->
-<section class="section" id="interests" data-nav-section="interests">
-  <div class="wrap">
-    <header class="section__head">
-      <span class="eyebrow">Off the clock</span>
-      <h2 class="section__title">What I'm into</h2>
-    </header>
-
-    <div class="interests">
-      {%- for it in site.data.interests -%}
-      <div class="interest-row">
-        <span class="interest-row__kind">{{ it.kind }}</span>
-        <div>
-          {%- if it.image %}
-          <img class="interest-row__img" src="{{ '/assets/img/' | append: it.image | relative_url }}" alt="" loading="lazy">
-          {%- endif %}
-          <h3 class="interest-row__title">{{ it.title }}</h3>
-          <p class="interest-row__note">{{ it.note }}</p>
-        </div>
-      </div>
-      {%- endfor -%}
-    </div>
-  </div>
-</section>
 
 <!-- ============ CV CTA ============ -->
 <section class="section" id="cv-cta" data-nav-section="cv">
