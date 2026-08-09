@@ -176,7 +176,7 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
   background: color-mix(in srgb, var(--paper) 70%, transparent);
   backdrop-filter: blur(8px);
 }
-.status-strip__inner { display: flex; align-items: center; gap: .9rem; padding: .75rem 0; }
+.status-strip__inner { display: flex; align-items: center; gap: .9rem; padding-block: .75rem; }
 .status-strip__body { min-width: 0; flex: 1; }
 .status-strip__label {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -447,24 +447,24 @@ p a:hover, .prose a:hover { color: var(--accent-ink); }
 /* =============================================================
    CV
    ============================================================= */
-.cv-header { display: flex; align-items: center; gap: clamp(1.25rem, 4vw, 2.5rem); margin-bottom: 2.4rem; }
+.cv-header { display: flex; align-items: flex-start; gap: clamp(1.25rem, 4vw, 2.5rem); margin-bottom: 2.4rem; }
 .cv-portrait {
   width: clamp(96px, 14vw, 180px); height: auto; flex: none;
   border: 1px solid var(--line); border-radius: 6px;
 }
 .cv-header .section__head { margin-bottom: 0; }
 @media (max-width: 480px) {
-  .cv-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .cv-portrait { width: 80px; }
 }
 .cv-block { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1.5rem 2.5rem; padding: 1.8rem 0; border-top: 1px solid var(--line); }
 .cv-block:first-of-type { border-top: 0; }
 .cv-when { font-family: var(--f-label); font-size: var(--step--1); color: var(--muted); }
 .cv-duration { display: block; margin-top: .2rem; font-size: .78em; color: var(--line-2); }
+.cv-when .tag { display: inline-block; margin-top: .5rem; }
 .cv-role { font-family: var(--f-display); font-weight: 600; font-size: var(--step-1); margin: 0 0 .1rem; }
 .cv-org { color: var(--accent-ink); font-style: italic; margin: 0; }
-.cv-role-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin: 0 0 .8rem; }
 .tag--sector { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, var(--line-2)); }
-.cv-points { margin: 0; padding: 0; list-style: none; }
+.cv-points { margin: .8rem 0 0; padding: 0; list-style: none; }
 .cv-points li { position: relative; padding-left: 1.2rem; margin-bottom: .5rem; color: var(--ink-soft); }
 .cv-points li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 .cv-detail { color: var(--ink-soft); margin: 0; font-size: var(--step-0); }

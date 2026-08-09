@@ -32,13 +32,11 @@ description: The long version — roles, systems, and the throughline from appli
           <div class="cv-when">
             {{ r.when }}
             {%- if r.duration %}<span class="cv-duration">{{ r.duration }}</span>{%- endif %}
+            {%- if r.sector %}<span class="tag tag--sector">{{ r.sector }}</span>{% endif -%}
           </div>
           <div>
             <h3 class="cv-role">{{ r.role }}</h3>
-            <div class="cv-role-meta">
-              <p class="cv-org">{{ r.org }}</p>
-              {%- if r.sector %}<span class="tag tag--sector">{{ r.sector }}</span>{% endif -%}
-            </div>
+            <p class="cv-org">{{ r.org }}</p>
             <ul class="cv-points">
               {%- for pt in r.points -%}<li>{{ pt }}</li>{%- endfor -%}
             </ul>
